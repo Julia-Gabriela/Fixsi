@@ -1,4 +1,6 @@
-# ✨ Fixsi
+<p align="center">
+  <img src="https://i.imgur.com/Yr00EEf.png" alt="Fixsi Logo" width="400"/>
+</p>
 
 **Fixsi** é uma plataforma que conecta **profissionais autônomos** a **clientes**, de forma simples e prática – quase como um *“Tinder de serviços”*.  
 Além disso, também será possível **alugar ferramentas** pela própria plataforma.  
