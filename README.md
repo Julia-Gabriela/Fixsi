@@ -7,29 +7,12 @@ Além disso, também será possível **alugar ferramentas** pela própria plataf
 
 ## 🚀 Funcionalidades
 
-<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;margin:5px 0;">
-✅ Cadastro de <b>clientes</b> e <b>profissionais</b>
-</div>
-
-<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;margin:5px 0;">
-✅ Tela de <b>login e autenticação</b>
-</div>
-
-<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;margin:5px 0;">
-✅ <b>Painel do usuário</b> com histórico, agendamentos e mensagens
-</div>
-
-<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;margin:5px 0;">
-✅ <b>Perfil completo</b> (informações pessoais, atividades, avaliações)
-</div>
-
-<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;margin:5px 0;">
-✅ <b>Sistema de avaliações</b> ⭐⭐⭐⭐⭐
-</div>
-
-<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;margin:5px 0;">
-✅ <b>Aluguel de ferramentas</b> (para profissionais)
-</div>
+![Funcionalidade](https://img.shields.io/badge/✅%20Cadastro%20de%20clientes%20e%20profissionais-FF700C?style=for-the-badge&logoColor=white)  
+![Funcionalidade](https://img.shields.io/badge/✅%20Login%20e%20autenticação-FF700C?style=for-the-badge&logoColor=white)  
+![Funcionalidade](https://img.shields.io/badge/✅%20Painel%20do%20usuário-FF700C?style=for-the-badge&logoColor=white)  
+![Funcionalidade](https://img.shields.io/badge/✅%20Perfil%20completo-FF700C?style=for-the-badge&logoColor=white)  
+![Funcionalidade](https://img.shields.io/badge/✅%20Sistema%20de%20avaliações-FF700C?style=for-the-badge&logoColor=white)  
+![Funcionalidade](https://img.shields.io/badge/✅%20Aluguel%20de%20ferramentas-FF700C?style=for-the-badge&logoColor=white)  
 
 ---
 
