@@ -41,11 +41,11 @@ E não para por aí: também será possível **alugar ferramentas** dentro da pl
 
 ![Equipe](https://img.shields.io/badge/👩‍💻%20Equipe-FF700C?style=for-the-badge&labelColor=FF700C&color=FF700C)
 
-- Julia Gabriela Gomes Da Silva  
-- Lara Ewellen De Carvalho Rocha  
-- Luiza Lima De Sá  
+- [Júlia Gabriela](https://github.com/Julia-Gabriela)  
+- [Lara Ewellen](https://github.com/Laraewellen)  
+- [Luiza Lima](https://github.com/luizalima13)  
 - Vinicius Lacerda Soares  
-- Vitor Hugo Sátiro Lopes Garcia  
+- [Vitor Hugo Sátiro](https://github.com/vitor-garcia83)  
 - Nathalia Gualberto Lopes  
 
 ---
