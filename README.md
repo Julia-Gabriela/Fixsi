@@ -45,11 +45,12 @@ E não para por aí: também será possível **alugar ferramentas** dentro da pl
 - [Lara Ewellen](https://github.com/Laraewellen)  
 - [Luiza Lima](https://github.com/luizalima13)  
 - Vinicius Lacerda Soares  
-- [Vitor Hugo Sátiro](https://github.com/vitor-garcia83)  
-- Nathalia Gualberto Lopes  
+- [Vitor Hugo Sátiro](https://github.com/vistor-garcia83)  
+- [Nathalia Gualberto Lopes](https://github.com/ngualbertolopes)  
+- Maria Eduarda Nunes 
 
 ---
 
 ![Licença](https://img.shields.io/badge/📜%20Licença-FF700C?style=for-the-badge&labelColor=FF700C&color=FF700C)
 
-Este projeto está sob a licença **MIT**.  
+Este projeto está sob a licença **copyleft**.  
