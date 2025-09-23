@@ -5,9 +5,7 @@ Além disso, também será possível **alugar ferramentas** pela própria plataf
 
 ---
 
-<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;font-weight:bold;font-size:16px;">
-🚀 Funcionalidades
-</div>
+![Funcionalidades](https://img.shields.io/badge/🚀%20Funcionalidades-FF700C?style=for-the-badge&labelColor=FF700C&color=FF700C)
 
 - Cadastro de **clientes** e **profissionais**  
 - Tela de **login e autenticação**  
@@ -18,9 +16,7 @@ Além disso, também será possível **alugar ferramentas** pela própria plataf
 
 ---
 
-<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;font-weight:bold;font-size:16px;">
-🖼️ Protótipo no Figma
-</div>
+![Protótipo](https://img.shields.io/badge/🖼️%20Protótipo%20no%20Figma-FF700C?style=for-the-badge&labelColor=FF700C&color=FF700C)
 
 - Tela de boas-vindas  
 - Cadastro  
@@ -30,9 +26,7 @@ Além disso, também será possível **alugar ferramentas** pela própria plataf
 
 ---
 
-<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;font-weight:bold;font-size:16px;">
-🛠️ Tecnologias Utilizadas
-</div>
+![Tecnologias](https://img.shields.io/badge/🛠️%20Tecnologias%20Utilizadas-FF700C?style=for-the-badge&labelColor=FF700C&color=FF700C)
 
 - **Front-end:** HTML, CSS, JavaScript  
 - **Back-end:** Django (Python)  
@@ -41,9 +35,7 @@ Além disso, também será possível **alugar ferramentas** pela própria plataf
 
 ---
 
-<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;font-weight:bold;font-size:16px;">
-👩‍💻 Equipe
-</div>
+![Equipe](https://img.shields.io/badge/👩‍💻%20Equipe-FF700C?style=for-the-badge&labelColor=FF700C&color=FF700C)
 
 - Julia Gabriela Gomes Da Silva  
 - Lara Ewellen De Carvalho Rocha  
@@ -54,8 +46,6 @@ Além disso, também será possível **alugar ferramentas** pela própria plataf
 
 ---
 
-<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;font-weight:bold;font-size:16px;">
-📜 Licença
-</div>
+![Licença](https://img.shields.io/badge/📜%20Licença-FF700C?style=for-the-badge&labelColor=FF700C&color=FF700C)
 
 Este projeto está sob a licença **MIT**.  
