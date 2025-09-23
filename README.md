@@ -5,27 +5,35 @@ Além disso, também será possível **alugar ferramentas** pela própria plataf
 
 ---
 
-## 🚀 Funcionalidades
+<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;font-weight:bold;font-size:16px;">
+🚀 Funcionalidades
+</div>
 
-![Funcionalidade](https://img.shields.io/badge/✅%20Cadastro%20de%20clientes%20e%20profissionais-FF700C?style=for-the-badge&logoColor=white)  
-![Funcionalidade](https://img.shields.io/badge/✅%20Login%20e%20autenticação-FF700C?style=for-the-badge&logoColor=white)  
-![Funcionalidade](https://img.shields.io/badge/✅%20Painel%20do%20usuário-FF700C?style=for-the-badge&logoColor=white)  
-![Funcionalidade](https://img.shields.io/badge/✅%20Perfil%20completo-FF700C?style=for-the-badge&logoColor=white)  
-![Funcionalidade](https://img.shields.io/badge/✅%20Sistema%20de%20avaliações-FF700C?style=for-the-badge&logoColor=white)  
-![Funcionalidade](https://img.shields.io/badge/✅%20Aluguel%20de%20ferramentas-FF700C?style=for-the-badge&logoColor=white)  
-
----
-
-## 🖼️ Protótipo no Figma
-🎨 Tela de boas-vindas  
-🎨 Cadastro  
-🎨 Login  
-🎨 Perfil do usuário  
-🎨 Histórico de avaliações  
+- Cadastro de **clientes** e **profissionais**  
+- Tela de **login e autenticação**  
+- **Painel do usuário** com histórico, agendamentos e mensagens  
+- **Perfil completo** (informações pessoais, atividades, avaliações)  
+- **Sistema de avaliações** ⭐⭐⭐⭐⭐  
+- **Aluguel de ferramentas** (para profissionais)  
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;font-weight:bold;font-size:16px;">
+🖼️ Protótipo no Figma
+</div>
+
+- Tela de boas-vindas  
+- Cadastro  
+- Login  
+- Perfil do usuário  
+- Histórico de avaliações  
+
+---
+
+<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;font-weight:bold;font-size:16px;">
+🛠️ Tecnologias Utilizadas
+</div>
+
 - **Front-end:** HTML, CSS, JavaScript  
 - **Back-end:** Django (Python)  
 - **Banco de Dados:** SQL  
@@ -33,15 +41,21 @@ Além disso, também será possível **alugar ferramentas** pela própria plataf
 
 ---
 
-## 👩‍💻 Equipe
-👩 Julia Gabriela Gomes Da Silva  
-👩 Lara Ewellen De Carvalho Rocha  
-👩 Luiza Lima De Sá  
-👨 Vinicius Lacerda Soares  
-👨 Vitor Hugo Sátiro Lopes Garcia  
-👩 Nathalia Gualberto Lopes  
+<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;font-weight:bold;font-size:16px;">
+👩‍💻 Equipe
+</div>
+
+- Julia Gabriela Gomes Da Silva  
+- Lara Ewellen De Carvalho Rocha  
+- Luiza Lima De Sá  
+- Vinicius Lacerda Soares  
+- Vitor Hugo Sátiro Lopes Garcia  
+- Nathalia Gualberto Lopes  
 
 ---
 
-## 📜 Licença
+<div style="background:#FF700C;color:white;padding:10px 15px;border-radius:8px;font-weight:bold;font-size:16px;">
+📜 Licença
+</div>
+
 Este projeto está sob a licença **MIT**.  
