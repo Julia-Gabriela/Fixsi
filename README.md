@@ -22,11 +22,10 @@ E não para por aí: também será possível **alugar ferramentas** dentro da pl
 
 ![Protótipo](https://img.shields.io/badge/🖼️%20Protótipo%20no%20Figma-FF700C?style=for-the-badge&labelColor=FF700C&color=FF700C)
 
-- Tela de boas-vindas  
-- Cadastro  
-- Login  
-- Perfil do usuário  
-- Histórico de avaliações  
+O protótipo do **Fixsi** foi desenvolvido no **Figma** para mostrar de forma clara a experiência do usuário.  
+Ele apresenta os principais fluxos do sistema, como cadastro, login, perfil, agendamentos e avaliações, permitindo navegar pelas telas de maneira interativa.
+
+🔗 [Visualizar protótipo no Figma](https://www.figma.com/design/bCaY9zgky6N7vh99HIO2wK/Startups---Fixsi?node-id=2-8&t=3gd9lTYCWTS0Sc29-1)
 
 ---
 
@@ -53,4 +52,4 @@ E não para por aí: também será possível **alugar ferramentas** dentro da pl
 
 ![Licença](https://img.shields.io/badge/📜%20Licença-FF700C?style=for-the-badge&labelColor=FF700C&color=FF700C)
 
-Este projeto está sob a licença **copyleft**.  
+Este projeto está sob a licença **Copyright**.  
