@@ -33,7 +33,7 @@ Ele apresenta os principais fluxos do sistema, como cadastro, login, perfil, age
 
 - **Front-end:** HTML, CSS, JavaScript  
 - **Back-end:** Django (Python)  
-- **Banco de Dados:** SQL  
+- **Banco de Dados:** MySQL Workbench 
 - **Prototipação:** Figma  
 
 ---
