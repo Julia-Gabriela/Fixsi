@@ -3,11 +3,44 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Página inicial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixsi - Encontre Profissionais</title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
-    <h1>Bem-vinda ao novo projeto 🚀</h1>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo-container">
+                <a href="{% url 'home' %}"><img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="logo"></a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">Como funciona</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="{% url 'sobre_nos' %}">Sobre nós</a></li>
+                </ul>
+            </nav>
+            <div class="nav-action">
+                <a href="#" class="btn-signup">Entre ou Cadastre-se</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Encontre <span class="highlight-orange">profissionais</span> e contrate <span class="highlight-orange">serviços</span> para tudo o que precisar</h1>
+                <p>A Fixsi conecta você aos melhores prestadores de serviços domésticos, com segurança e rapidez.</p>
+                <a href="#" class="btn-primary">Encontrar profissional agora</a>
+            </div>
+            <div class="hero-image">
+                <img src="{% static 'img/ferramentas.png' %}" alt="Ferramentas">
+            </div>
+        </div>
+    </main>
+
     <script src="{% static 'js/script.js' %}"></script>
+
 </body>
 </html>
