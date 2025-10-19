@@ -11,19 +11,28 @@
 
     <a href="{% url 'home' %}" class="back-button">Voltar</a>
 
-    <div class="login-card">
-        <img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="login-logo">
-        <img src="{% static 'img/boneco.png' %}" alt="Ícone de usuário" class="user-icon">
+<div class="login-card">
+    <img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="login-logo">
+    <img src="{% static 'img/boneco.png' %}" alt="Ícone de usuário" class="user-icon">
 
-        <form>
-            <input type="email" placeholder="E-mail" required>
-            <input type="password" placeholder="Senha" required>
-            <a href="#" class="forgot-password">Esqueci minha senha!</a>
-            <button type="submit" class="btn-login">Entrar</button>
-        </form>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="email" placeholder="E-mail" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <a href="#" class="forgot-password">Esqueci minha senha!</a>
+        <button type="submit" class="btn-login">Entrar</button>
+    </form>
 
-        <p class="signup-link">Não possui conta? <a href="#">Cadastre-se</a></p>
-    </div>
+    {% if messages %}
+        <div class="login-messages">
+            {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <p class="signup-link">Não possui conta? <a href="#">Cadastre-se</a></p>
+</div>
 
 </body>
 </html>
