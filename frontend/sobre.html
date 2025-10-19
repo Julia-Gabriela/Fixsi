@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Fixsi</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo-container">
+                <a href="{% url 'home' %}"><img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="logo"></a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">Como funciona</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li class="active"><a href="{% url 'sobre_nos' %}">Sobre nós</a></li>
+                </ul>
+            </nav>
+            <div class="nav-action">
+                <a href="#" class="btn-signup">Entre ou Cadastre-se</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <p class="subheading">Sobre nós</p>
+                <h1>Plataforma digital que conecta <span class="highlight-orange">clientes</span> a <span class="highlight-orange">profissionais</span></h1>
+                
+                <p>O Fixsi é uma plataforma que conecta clientes e profissionais autônomos de forma simples e segura. Nosso objetivo é facilitar o dia a dia de quem precisa de serviços e valorizar quem oferece seu trabalho.</p>
+                <p>Também oferecemos a opção de alugar ferramentas com preços acessíveis, criando mais oportunidades para quem quer realizar ou prestar um serviço.</p>
+                <p>Acreditamos em colaboração, confiança e inovação. O Fixsi é um espaço para crescer e construir juntos. 🔨🧡</p>
+                
+                <a href="#" class="btn-primary">Encontrar profissional agora</a>
+            </div>
+
+            <div class="contact-details">
+                <h2>Fale Conosco</h2>
+                <div class="contact-item">
+                    <strong>Telefone:</strong>
+                    <p><a href="tel:+5561999998888">(61) 99999-8888</a></p>
+                </div>
+                <div class="contact-item">
+                    <strong>E-mail:</strong>
+                    <p><a href="mailto:contato@fixsi.com.br">contato@fixsi.com.br</a></p>
+                </div>
+                <div class="contact-item">
+                    <strong>Horário de Atendimento:</strong>
+                    <p>Segunda a Sexta, das 9h às 18h</p>
+                </div>
+            </div>
+<!-- This is a comment -->
+        </div>
+    </main>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
