@@ -12,13 +12,13 @@
     <header class="navbar">
         <div class="container">
             <div class="logo-container">
-                <img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="logo">
+                <a href="{% url 'home' %}"><img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="logo"></a>
             </div>
             <nav class="nav-menu">
                 <ul>
                     <li><a href="#">Como funciona</a></li>
                     <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="{% url 'sobre_nos' %}">Sobre nós</a></li>
                 </ul>
             </nav>
             <div class="nav-action">
