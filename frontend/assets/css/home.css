@@ -1,16 +1,16 @@
 /* Importando a fonte Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* Variáveis de Cores */
+
 :root {
     --orange: #F97316;
     --dark-blue: #05263C;
     --text-gray: #6D6666;
-    --light-gray: #e2e8f0; /* Cinza mais claro para a borda */
+    --light-gray: #e2e8f0; 
     --white: #FFFFFF;
 }
 
-/* Estilos Gerais */
+
 * {
     margin: 0;
     padding: 0;
@@ -29,7 +29,7 @@ body {
     padding: 0 20px;
 }
 
-/* Cabeçalho e Navegação */
+
 .navbar {
     padding: 15px 0;
     background-color: var(--white);
@@ -39,7 +39,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--light-gray); /* Linha divisória */
+    border-bottom: 1px solid var(--light-gray); 
     padding-bottom: 15px;
 }
 
@@ -50,7 +50,7 @@ body {
 .nav-menu ul {
     list-style: none;
     display: flex;
-    gap: 35px; /* Espaço entre os itens do menu */
+    gap: 35px; 
 }
 
 .nav-menu ul li a {
@@ -79,7 +79,7 @@ body {
     opacity: 0.9;
 }
 
-/* Seção Principal (Hero) */
+
 .hero {
     padding: 100px 0;
 }
@@ -92,12 +92,12 @@ body {
 }
 
 .hero-text {
-    flex-basis: 50%; /* Ocupa 50% da largura */
+    flex-basis: 50%; 
     max-width: 500px;
 }
 
 .hero-text h1 {
-    font-size: 2.75rem; /* 44px */
+    font-size: 2.75rem; 
     font-weight: 700;
     line-height: 1.3;
     margin-bottom: 20px;
@@ -118,7 +118,7 @@ body {
     background-color: var(--orange);
     color: var(--white);
     padding: 16px 32px;
-    border-radius: 50px; /* Borda bem redonda */
+    border-radius: 50px; 
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 600;
@@ -132,7 +132,7 @@ body {
 }
 
 .hero-image {
-    flex-basis: 45%; /* Ocupa 45% da largura */
+    flex-basis: 45%; 
     text-align: center;
 }
 
@@ -142,9 +142,7 @@ body {
 }
 
 
-/* ========================================= */
-/* REGRAS DE RESPONSIVIDADE         */
-/* ========================================= */
+
 
 /* Para tablets e telas menores (abaixo de 992px) */
 @media (max-width: 992px) {

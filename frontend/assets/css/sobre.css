@@ -1,7 +1,5 @@
-/* Importando a fonte Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* Variáveis de Cores */
 :root {
     --orange: #F97116;
     --dark-blue: #05263C;
@@ -10,9 +8,7 @@
     --white: #FFFFFF;
 }
 
-/* ========================================= */
-/* ESTILOS GERAIS (PARA TODO O SITE) */
-/* ========================================= */
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Poppins', sans-serif; background-color: var(--white); color: var(--dark-blue); }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
@@ -20,7 +16,6 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--white); color
 .btn-primary { background-color: var(--orange); color: var(--white); padding: 16px 32px; border-radius: 50px; text-decoration: none; font-size: 1.1rem; font-weight: 600; display: inline-block; transition: all 0.3s ease; }
 .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
 
-/* Cabeçalho e Navegação */
 .navbar { padding: 15px 0; }
 .navbar .container { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--light-gray); padding-bottom: 15px; }
 .logo { height: 70px; }
@@ -31,9 +26,7 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--white); color
 .btn-signup { background-color: var(--dark-blue); color: var(--white); padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
 .btn-signup:hover { opacity: 0.9; }
 
-/* ========================================= */
-/* LAYOUT PADRÃO DE PÁGINA (HOME E SOBRE) */
-/* ========================================= */
+
 .hero { padding: 100px 0; }
 .hero-content { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
 .hero-text { flex-basis: 50%; max-width: 500px; }
@@ -43,9 +36,7 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--white); color
 .hero-image { flex-basis: 45%; text-align: center; }
 .hero-image img { max-width: 100%; height: auto; }
 
-/* ========================================= */
-/* ESTILOS ESPECÍFICOS DO CARD DE CONTATO (NOVO DESIGN) */
-/* ========================================= */
+
 .contact-details {
     flex-basis: 45%;
     padding: 30px;
@@ -60,7 +51,7 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--white); color
     color: var(--dark-blue);
 }
 .contact-item {
-    margin-bottom: 25px; /* Mais espaço entre os itens */
+    margin-bottom: 25px; 
 }
 .contact-item strong {
     display: block;
@@ -83,9 +74,7 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--white); color
 }
 
 
-/* ========================================= */
-/* REGRAS DE RESPONSIVIDADE (PARA TODO O SITE) */
-/* ========================================= */
+
 @media (max-width: 992px) {
     .hero-content { flex-direction: column; text-align: center; gap: 40px; }
     .hero-text { max-width: 100%; }
