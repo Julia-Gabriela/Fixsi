@@ -5,12 +5,12 @@ from django.urls import path
 from app import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import path, include
 
-# Apenas UMA lista urlpatterns com todas as rotas
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name="home"),
-    path('sobre/', views.sobre_nos, name="sobre_nos"),
+    path('', include('app.urls')),
+    path('login/', include('login.urls')),  
 ]
 
 if settings.DEBUG:

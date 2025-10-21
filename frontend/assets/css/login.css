@@ -1,0 +1,148 @@
+/* Importando a fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Variáveis de Cores */
+:root {
+    --orange: #F97116;
+    --dark-blue: #05263C;
+    --text-gray: #6D6666;
+    --light-gray: #e2e8f0;
+    --background-page: #f8f9fa;
+    --white: #FFFFFF;
+}
+
+/* ========================================= */
+/* ESTILOS GERAIS (PARA TODO O SITE) */
+/* ========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background-color: var(--white); color: var(--dark-blue); }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* ========================================= */
+/* ESTILOS DE PÁGINAS NORMAIS (HOME, SOBRE) */
+/* ========================================= */
+.navbar { padding: 15px 0; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--light-gray); padding-bottom: 15px; }
+.logo { height: 70px; }
+.nav-menu ul { list-style: none; display: flex; gap: 35px; }
+.nav-menu ul li a { text-decoration: none; color: var(--dark-blue); font-weight: 500; font-size: 1rem; }
+.nav-menu ul li.active a { font-weight: 700; }
+.btn-signup { background-color: var(--dark-blue); color: var(--white); padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 500; }
+.hero { padding: 100px 0; }
+.hero-content { display: flex; align-items: center; justify-content: space-between; gap: 60px; }
+.hero-text { flex-basis: 50%; max-width: 500px; }
+.hero-text h1 { font-size: 2.75rem; }
+.hero-text p { font-size: 1.1rem; color: var(--text-gray); margin-bottom: 40px; }
+.highlight-orange { color: var(--orange); }
+.btn-primary { background-color: var(--orange); color: var(--white); padding: 16px 32px; border-radius: 50px; text-decoration: none; font-size: 1.1rem; font-weight: 600; display: inline-block; }
+.contact-details { flex-basis: 45%; padding: 30px; border-radius: 8px; border-top: 4px solid var(--dark-blue); box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07); }
+.contact-details h2 { font-size: 1.8rem; margin-bottom: 30px; }
+.contact-item { margin-bottom: 25px; }
+.contact-item strong { display: block; margin-bottom: 5px; }
+.contact-item p { font-size: 1.1rem; color: var(--text-gray); margin: 0; }
+.contact-item a { color: var(--orange); text-decoration: none; font-weight: 500; }
+
+/* ========================================= */
+/* ESTILOS DA PÁGINA DE LOGIN (GARANTIDO QUE ESTÁ AQUI) */
+/* ========================================= */
+.login-page-body {
+    background-color: var(--background-page);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+.back-button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-card {
+    background-color: var(--white);
+    padding: 50px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+.login-logo {
+    height: 60px;
+    margin-bottom: 20px;
+}
+.user-icon {
+    height: 40px;
+    margin-bottom: 30px;
+}
+.login-card form {
+    display: flex;
+    flex-direction: column;
+}
+.login-card input[type="email"],
+.login-card input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: #E8E8E8;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+.login-card input::placeholder {
+    color: #999;
+}
+.forgot-password {
+    text-align: right;
+    margin-bottom: 25px;
+    color: var(--orange);
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+.btn-login {
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+.signup-link {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+}
+.signup-link a {
+    color: var(--orange);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ========================================= */
+/* RESPONSIVIDADE */
+/* ========================================= */
+@media (max-width: 992px) {
+    .hero-content { flex-direction: column; text-align: center; gap: 40px; }
+    .hero-text { max-width: 100%; }
+}
+@media (max-width: 768px) {
+    .navbar .container { flex-direction: column; gap: 25px; border-bottom: none; }
+    .hero { padding: 60px 0; }
+    .hero-text h1 { font-size: 2.2rem; }
+}
+@media (max-width: 480px) {
+    .nav-menu ul { flex-direction: column; align-items: center; gap: 15px; }
+    .back-button { top: 15px; right: 15px; }
+    .login-card { padding: 30px 20px; }
+}

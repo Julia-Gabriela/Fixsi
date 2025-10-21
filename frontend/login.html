@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Fixsi</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body class="login-page-body">
+
+    <a href="{% url 'home' %}" class="back-button">Voltar</a>
+
+<div class="login-card">
+    <img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="login-logo">
+    <img src="{% static 'img/boneco.png' %}" alt="Ícone de usuário" class="user-icon">
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="email" placeholder="E-mail" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <a href="#" class="forgot-password">Esqueci minha senha!</a>
+        <button type="submit" class="btn-login">Entrar</button>
+    </form>
+
+    {% if messages %}
+        <div class="login-messages">
+            {% for message in messages %}
+                <p style="color: red;">{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <p class="signup-link">Não possui conta? <a href="#">Cadastre-se</a></p>
+</div>
+
+</body>
+</html>
