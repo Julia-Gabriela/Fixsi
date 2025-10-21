@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Passo 1</title>
+    <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
+</head>
+<body class="login-page-body">
+
+    <a href="{% url 'login' %}" class="back-button">Voltar</a>
+
+    <div class="login-card">
+        <img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="login-logo">
+        <img src="{% static 'img/boneco.png' %}" alt="Ícone de usuário" class="user-icon">
+
+        <h2 class="card-title">CADASTRE-SE</h2>
+
+        <!-- ✅ Correção: método POST + action certo -->
+        <form method="POST" action="" class="login-form" id="cadastro-form-passo1">
+    {% csrf_token %}
+
+    <input type="text" name="nome" placeholder="Nome completo" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="text" id="cpf" name="cpf" placeholder="CPF (000.000.000-00)" required>
+    <input type="text" id="telefone" name="telefone" placeholder="Telefone ((00) 00000-0000)" required>
+
+    <label class="form-label" for="data_nascimento">Data de Nascimento</label>
+    <input type="date" id="data_nascimento" name="data_nascimento" required>
+
+    <input type="password" name="senha" placeholder="Senha" required>
+    <input type="password" name="confirmar_senha" placeholder="Confirmar senha" required>
+
+    <!-- aqui é o botão -->
+    <button type="submit" class="btn-login">Próximo</button>
+</form>
+
+
+        <p class="signup-link">
+            Já possui conta? <a href="{% url 'login' %}">Entrar</a>
+        </p>
+    </div>
+
+    <script src="{% static 'js/cadastro.js' %}" defer></script>
+</body>
+</html>

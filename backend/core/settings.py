@@ -56,7 +56,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'plataforma_servicos',
+        'NAME': 'fixsi_db',
         'USER': 'root',
         'PASSWORD': '1234',   # troque pela sua senha real do MySQL
         'HOST': 'localhost',
