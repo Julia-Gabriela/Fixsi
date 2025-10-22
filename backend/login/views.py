@@ -9,13 +9,13 @@ from .models import Perfil, Cliente, Profissional
 # ---------- LOGIN ----------
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
+        username = request.POST.get('username')  # <- volta a usar 'username'
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
             login(request, user)
-            messages.success(request, f"Bem-vindo(a), {user.first_name}!")
+            messages.success(request, f"Bem-vindo(a), {user.first_name or user.username}!")
             return redirect('area_logada')
         else:
             messages.error(request, 'Usuário ou senha incorretos.')

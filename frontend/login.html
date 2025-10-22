@@ -17,8 +17,8 @@
 
     <form method="POST">
         {% csrf_token %}
-        <input type="email" placeholder="E-mail" required>
-        <input type="password" name="password" placeholder="Senha" required>
+         <input type="email" name="username" placeholder="Digite seu e-mail" required>
+         <input type="password" name="password" placeholder="Digite sua senha" required>
         <a href="#" class="forgot-password">Esqueci minha senha!</a>
         <button type="submit" class="btn-login">Entrar</button>
     </form>
