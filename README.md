@@ -43,10 +43,12 @@ Ele apresenta os principais fluxos do sistema, como cadastro, login, perfil, age
 - [Júlia Gabriela](https://github.com/Julia-Gabriela)  
 - [Lara Ewellen](https://github.com/Laraewellen)  
 - [Luiza Lima](https://github.com/luizalima13)  
-- Vinicius Lacerda Soares  
-- [Vitor Hugo Sátiro](https://github.com/vistor-garcia83)  
+- [Maria Eduarda Nunes](https://github.com/marianunx) 
 - [Nathalia Gualberto Lopes](https://github.com/ngualbertolopes)  
-- Maria Eduarda Nunes 
+- [Vitor Hugo Sátiro](https://github.com/vistor-garcia83)  
+- [Vinicius Lacerda Soares](https://github.com/volosami)  
+
+
 
 ---
 
