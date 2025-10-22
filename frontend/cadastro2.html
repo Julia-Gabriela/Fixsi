@@ -14,16 +14,14 @@
     <div class="login-card">
         <img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="login-logo">
         <img src="{% static 'img/boneco.png' %}" alt="Ícone de usuário" class="user-icon">
-        
+
         <h2 class="card-title">SEUS DADOS</h2>
 
-        <!-- Adicionado action para enviar corretamente -->
         <form class="login-form" id="cadastro-form" method="POST" action="{% url 'cadastro2' %}">
             {% csrf_token %}
-            
+
             <label class="form-label" style="text-align: center; margin-bottom: 10px;">Sou</label>
             <div class="radio-group">
-                <!-- alterado 'tipo_usuario' para 'tipo' para o Django reconhecer -->
                 <input type="radio" id="sou_profissional" name="tipo" value="profissional">
                 <label for="sou_profissional">Profissional</label>
                 <input type="radio" id="sou_cliente" name="tipo" value="cliente">
@@ -45,21 +43,152 @@
             </div>
 
             <button type="submit" class="btn-login" id="btn-concluir-cadastro">Cadastre-se</button>
-
         </form>
     </div>
 
-    <div class="modal-overlay" id="modal-termos"> 
+<div class="modal-overlay" id="modal-termos">
         <div class="modal-content">
-            <h3>Termos e Condições</h3>
-            <p>Ao continuar, você concorda com nossos Termos de Uso e Política de Privacidade.</p>
-            <div class="modal-actions">
-                <button type="button" id="btn-rejeitar-termos">Recusar</button>
-                <button type="button" id="btn-aceitar-termos">Aceitar</button>
+            <div class="modal-scrollable-content">
+                <h4>TERMOS DE USO — PLATAFORMA FIXSI</h4>
+
+                <h5>1. Apresentação</h5>
+                <p>Estes Termos de Uso regulam o acesso e o uso da Plataforma Fixsi, que intermedeia serviços prestados por profissionais autônomos e locações de ferramentas.</p>
+                <p>Ao se cadastrar ou utilizar a plataforma, o usuário (Cliente ou Prestador) declara estar de acordo com todas as condições aqui descritas.</p>
+
+                <h5>2. Definições</h5>
+                <p><strong>Plataforma Fixsi:</strong> ambiente digital que conecta Clientes e Prestadores.<br>
+                   <strong>Cliente:</strong> pessoa física ou jurídica que contrata serviços e/ou aluga ferramentas.<br>
+                   <strong>Prestador:</strong> profissional que oferece serviços por meio da Plataforma.<br>
+                   <strong>Usuário:</strong> termo genérico que se aplica tanto a Clientes quanto a Prestadores.</p>
+
+                <h5>3. Cadastro e Conta</h5>
+                <p>O cadastro é pessoal e intransferível.<br>
+                   O usuário deve fornecer informações verdadeiras, sob pena de exclusão e responsabilização civil.<br>
+                   A senha é confidencial e o usuário é responsável por qualquer uso indevido de sua conta.<br>
+                   É proibido criar múltiplas contas com o mesmo CPF/CNPJ.</p>
+
+                <h5>4. Obrigações dos Usuários</h5>
+                <p><strong>Cliente:</strong></p>
+                <ul>
+                    <li>Efetuar pagamentos nos prazos;</li>
+                    <li>Usar ferramentas de forma responsável;</li>
+                    <li>Reportar incidentes (roubo, dano, perda) em até 24h;</li>
+                    <li>Avaliar o Prestador ao término do serviço;</li>
+                    <li>Devolver ferramentas no prazo estabelecido.</li>
+                </ul>
+                <p><strong>Prestador:</strong></p>
+                <ul>
+                    <li>Executar os serviços com diligência e qualidade;</li>
+                    <li>Cumprir normas de segurança e usar EPIs;</li>
+                    <li>Manter seguro de responsabilidade civil ou aderir ao seguro coletivo da plataforma;</li>
+                    <li>Enviar orçamentos e materiais previamente ao Cliente;</li>
+                    <li>Avaliar o Cliente ao final do serviço.</li>
+                </ul>
+
+                <h5>5. Obrigações da Plataforma</h5>
+                <p>A Fixsi compromete-se a:</p>
+                <ul>
+                    <li>Intermediar as relações com transparência e segurança;</li>
+                    <li>Manter a confidencialidade dos dados pessoais (LGPD);</li>
+                    <li>Garantir disponibilidade mínima de 99% (SLA);</li>
+                    <li>Fornecer registros e logs para investigação mediante solicitação formal e Boletim de Ocorrência;</li>
+                    <li>Moderar avaliações ofensivas, difamatórias ou discriminatórias.</li>
+                </ul>
+                <p>A Fixsi não é parte do contrato direto entre Cliente e Prestador — atua apenas como intermediadora tecnológica.</p>
+
+                <h5>6. Pagamentos e Cancelamentos</h5>
+                <p>Pagamentos são realizados via sistema seguro integrado à plataforma.<br>
+                   Em caso de atraso, incide multa de 2% e juros de 1% ao mês.<br>
+                   O Cliente pode desistir em até 7 dias após a contratação (art. 49, CDC).<br>
+                   Cancelamentos após o início do serviço implicam retenção de 15% por custos operacionais.<br>
+                   Disputas de pagamento serão analisadas mediante provas (prints, logs, mensagens).</p>
+
+                <h5>7. Responsabilidades e Penalidades</h5>
+                <p>Mau uso das ferramentas: multa de até 20% do valor do bem.<br>
+                   Fraudes, má-fé ou tentativas de burlar o sistema: suspensão imediata da conta.<br>
+                   Avaliações falsas ou difamatórias: multa de 5% e suspensão por 15 dias.<br>
+                   Reincidência, ameaças ou assédio pelo chat: bloqueio permanente.<br>
+                   Alegação de vínculo empregatício indevida: multa de 10% do contrato.</p>
+
+                <h5>8. Garantias e Seguros</h5>
+                <p>Todos os serviços possuem garantia mínima de 30 dias contra vícios de execução.<br>
+                   A plataforma poderá oferecer seguro adicional para proteção de ferramentas e danos.<br>
+                   O Prestador é responsável por danos causados por negligência.</p>
+
+                <h5>9. Rescisão e Suspensão</h5>
+                <p>O contrato pode ser rescindido com aviso prévio de 15 dias, salvo infração grave.<br>
+                   Casos graves (fraude, roubo, danos intencionais): rescisão imediata.<br>
+                   A Fixsi pode suspender a conta por até 30 dias ou bloquear definitivamente o usuário em caso de: Uso ilícito da plataforma; Descumprimento grave; Falta de cooperação em investigações; Reincidência em atrasos ou disputas injustificadas.</p>
+
+                <h5>10. Propriedade Intelectual</h5>
+                <p>Todo o conteúdo da plataforma (marca, design, textos, software) pertence à Fixsi.<br>
+                   É proibido copiar, reproduzir ou distribuir qualquer parte sem autorização.</p>
+
+                <h5>11. Privacidade e Proteção de Dados</h5>
+                <p>Os dados dos usuários são processados conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).<br>
+                   A Fixsi adota medidas de segurança adequadas e notificará a ANPD e os titulares em até 72h em caso de vazamento relevante.<br>
+                   O usuário pode solicitar correção, exclusão ou portabilidade de seus dados a qualquer momento.</p>
+
+                <h5>12. Solução de Conflitos</h5>
+                <p>Antes de ações judiciais, as partes se comprometem a tentar mediação interna pela plataforma.<br>
+                   Persistindo o conflito, será utilizada arbitragem, conforme a Lei nº 9.307/1996.<br>
+                   Foro subsidiário: comarca da sede da Fixsi.</p>
+
+                <h5>13. Disposições Finais</h5>
+                <p>O uso da plataforma implica aceitação integral destes Termos.<br>
+                   A Fixsi pode alterar este documento a qualquer momento, notificando os usuários cadastrados.<br>
+                   Casos omissos serão resolvidos com base na legislação brasileira aplicável (Código Civil, CDC, LGPD e Código Penal).</p>
+
+                <hr style="margin: 20px 0;"> <h4>POLÍTICA DE PRIVACIDADE — PLATAFORMA FIXSI</h4>
+
+                <h5>1. Coleta de Dados</h5>
+                <p>A Fixsi coleta:<br>
+                   - Dados de cadastro (nome, CPF/CNPJ, e-mail, telefone, endereço);<br>
+                   - Dados de uso da plataforma (IP, logs, mensagens, avaliações);<br>
+                   - Dados financeiros, quando aplicável, para processar pagamentos.</p>
+
+                <h5>2. Finalidade</h5>
+                <p>Os dados são utilizados para:<br>
+                   - Criar e manter contas;<br>
+                   - Executar intermediação entre Cliente e Prestador;<br>
+                   - Garantir segurança e integridade das transações;<br>
+                   - Cumprir obrigações legais e regulatórias.</p>
+
+                <h5>3. Compartilhamento</h5>
+                <p>Os dados podem ser compartilhados:<br>
+                   - Com prestadores de serviço (ex.: provedores de pagamento);<br>
+                   - Com autoridades públicas, mediante ordem judicial;<br>
+                   - Com seguradoras, para coberturas contratadas.</p>
+
+                <h5>4. Armazenamento e Segurança</h5>
+                <p>Dados armazenados em servidores seguros e criptografados.<br>
+                   Logs mantidos por, no mínimo, 6 meses, conforme o Marco Civil da Internet.<br>
+                   O acesso é restrito a colaboradores autorizados e monitorados.</p>
+
+                <h5>5. Direitos do Titular</h5>
+                <p>O usuário pode:<br>
+                   - Solicitar acesso, correção ou exclusão de dados;<br>
+                   - Revogar consentimento;<br>
+                   - Solicitar portabilidade;<br>
+                   - Reclamar junto à ANPD (Autoridade Nacional de Proteção de Dados).</p>
+
+                <h5>6. Retenção e Exclusão</h5>
+                <p>Os dados serão mantidos pelo tempo necessário para: Cumprir obrigações contratuais e legais; Prestar contas às autoridades; Resolver disputas e garantir direitos.</p>
+
+                <h5>7. Contato</h5>
+                <p>Dúvidas ou solicitações sobre privacidade podem ser enviadas para:<br>
+                   📧 <a href="mailto:privacidade@fixsi.com.br">privacidade@fixsi.com.br</a></p>
+
+                <h5>8. Atualizações</h5>
+                <p>Esta Política pode ser atualizada periodicamente, sendo a versão vigente sempre publicada na plataforma.</p>
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn-modal-reject" id="btn-rejeitar-termos">Não concordo</button>
+                <button type="button" class="btn-modal-accept" id="btn-aceitar-termos">Li e aceito</button>
             </div>
         </div>
     </div>
-
+    </div>
     <script src="{% static 'js/cadastro.js' %}" defer></script>
 </body>
 </html>
