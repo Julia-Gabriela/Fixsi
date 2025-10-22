@@ -23,13 +23,16 @@
         <button type="submit" class="btn-login">Entrar</button>
     </form>
 
-    {% if messages %}
-        <div class="login-messages">
-            {% for message in messages %}
-                <p style="color: red;">{{ message }}</p>
-            {% endfor %}
-        </div>
-    {% endif %}
+{% if messages %}
+  <div class="login-messages">
+    {% for message in messages %}
+      {% if message.tags == 'error' %}
+        <p style="color: red;">{{ message }}</p>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+
 
     <p class="signup-link">
   Não possui conta? <a href="{% url 'cadastro1' %}">Cadastre-se</a>
