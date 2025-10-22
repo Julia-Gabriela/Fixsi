@@ -102,6 +102,16 @@ A segurança dos dados é uma prioridade no Fixsi:
 
 ---
 
+![Guia de Contribuição](https://img.shields.io/badge/🤝%20Guia%20de%20Contribuição-FF700C?style=for-the-badge&labelColor=FF700C&color=FF700C)
+
+Para contribuir com o projeto, siga o passo a passo disponível no arquivo abaixo:
+
+📄 [Guia de Fork e Contribuição](./GUIA_FORK_FIXSI.txt)
+
+Esse guia explica como **fazer fork**, **clonar o repositório**, **criar branches**, e **enviar pull requests** corretamente, garantindo uma colaboração organizada e segura.
+
+---
+
 ![Arquitetura](https://img.shields.io/badge/🏗️%20Arquitetura-FF700C?style=for-the-badge&labelColor=FF700C&color=FF700C)
 
 O projeto segue a arquitetura **MVC (Model–View–Controller)**, garantindo organização, clareza e escalabilidade:
