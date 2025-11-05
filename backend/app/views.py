@@ -10,4 +10,9 @@ def entrar_view(request):
 def sobre_view(request):
     return render(request, 'sobre.html')
 
+def como_funciona_view(request):
+    return render(request, 'como_funciona.html')
+
+def servicos_view(request):
+    return render(request, 'servicos.html')
 
