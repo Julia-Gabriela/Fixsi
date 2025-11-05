@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços de Reparo - Fixsi</title>
+    <link rel="stylesheet" href="{% static 'css/servicos.css' %}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo-container">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="logo">
+                </a>
+            </div>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="{% url 'como_funciona' %}">Como funciona</a></li>
+                    <li class="active"><a href="{% url 'servicos' %}">Serviços</a></li> <li><a href="{% url 'sobre_nos' %}">Sobre nós</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-action">
+                <a href="{% url 'login' %}" class="btn-signup">Entre ou Cadastre-se</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="section servicos-page">
+        <div class="container">
+            <div class="header-servicos">
+                <p class="section-subtitle">Reparos e Manutenção</p>
+                <h1 class="section-title">
+                    Encontre o profissional ideal para seu <span class="highlight">reparo</span> ou <span class="highlight">reforma</span>
+                </h1>
+                <p class="section-description">
+                    A Fixsi conecta você aos melhores profissionais de manutenção e pequenos reparos. Busque pela categoria do serviço que você precisa.
+                </p>
+            </div>
+            
+            <div class="servicos-grid">
+                
+                <div class="servico-card">
+                    <div class="icon">⚡</div>
+                    <h3>Eletricista</h3>
+                    <p>Instalação, reparo e manutenção elétrica.</p>
+                </div>
+                
+                <div class="servico-card">
+                    <div class="icon">💧</div>
+                    <h3>Encanador</h3>
+                    <p>Reparos hidráulicos, vazamentos e desentupimento.</p>
+                </div>
+                
+                <div class="servico-card">
+                    <div class="icon">🧱</div>
+                    <h3>Pedreiro/Reformas</h3>
+                    <p>Pequenas obras, alvenaria e acabamentos.</p>
+                </div>
+                
+                <div class="servico-card">
+                    <div class="icon">🎨</div>
+                    <h3>Pintor</h3>
+                    <p>Pintura de paredes, teto e tratamento de superfícies.</p>
+                </div>
+
+                <div class="servico-card">
+                    <div class="icon">🔧</div>
+                    <h3>Montador de Móveis</h3>
+                    <p>Montagem e desmontagem de móveis novos ou usados.</p>
+                </div>
+                
+                <div class="servico-card">
+                    <div class="icon">🔨</div>
+                    <h3>Marido de Aluguel</h3>
+                    <p>Serviços gerais, como fixação de quadros e prateleiras.</p>
+                </div>
+                
+            </div>
+
+            <div class="chamada-servicos">
+                <h2>É profissional de reparos?</h2>
+                <p>Cadastre-se e comece a receber pedidos de orçamento na sua região. <a href="{% url 'login' %}" class="link-orange">Cadastre-se agora</a>!</p>
+            </div>
+            
+        </div>
+    </main>
+    
+    </body>
+</html>
