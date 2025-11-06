@@ -1,5 +1,7 @@
-from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Perfil
+from django.contrib.auth import logout
 
 def home_view(request):
     return render(request, 'home.html')
@@ -10,4 +12,24 @@ def entrar_view(request):
 def sobre_view(request):
     return render(request, 'sobre.html')
 
+def como_funciona_view(request):
+    return render(request, 'como_funciona.html')
 
+def servicos_view(request):
+    return render(request, 'servicos.html')
+
+@login_required 
+def dashboard_view(request):
+    try:
+        perfil = get_object_or_404(Perfil, user=request.user)
+    except:
+        perfil = None 
+
+    context = {
+        'perfil': perfil
+    }
+    return render(request, 'dashboard.html', context)
+
+def logout_view(request):
+    logout(request)
+    return redirect('home') 

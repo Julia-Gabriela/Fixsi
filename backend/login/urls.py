@@ -13,4 +13,5 @@ urlpatterns = [
 
     # Página logada
     path('area_logada/', views.area_logada_view, name='area_logada'),
+
 ]

@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+:root {
+    --orange: #F97316;
+    --dark-blue: #05263C;
+    --text-gray: #6D6666;
+    --light-gray: #e2e8f0; 
+    --white: #FFFFFF;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- ESTILOS DO NAVBAR (CABEÇALHO) --- */
+
+.navbar {
+    padding: 15px 0;
+    background-color: var(--white);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--light-gray); 
+    padding-bottom: 15px;
+}
+
+.logo {
+    height: 70px; 
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 35px; 
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--orange);
+}
+
+/* Marca o link ativo na página atual */
+.nav-menu ul li.active a {
+    color: var(--orange);
+    font-weight: 600;
+}
+
+.btn-signup {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.btn-signup:hover {
+    opacity: 0.9;
+}
+
+
+/* --- ESTILOS DA SEÇÃO PRINCIPAL (COMO FUNCIONA) --- */
+/* Esta é a parte principal onde a mágica acontece para o layout da parte de baixo */
+.section { 
+    padding: 80px 0; /* Ajustei o padding para ser mais padrão */
+}
+
+.section .container {
+    display: flex; /* Habilita o Flexbox para alinhar texto e card */
+    gap: 60px; /* Espaçamento entre as duas colunas */
+    align-items: flex-start; /* Alinha o conteúdo ao topo das colunas */
+}
+
+.text-section { /* Engloba o título, descrição, passos e botão */
+    flex: 2; /* Ocupa mais espaço que o info-card */
+    max-width: 700px; /* Um limite para o texto não ficar muito largo */
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--orange);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: 2.75rem; 
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    color: var(--dark-blue);
+}
+
+.highlight { /* A span para 'clientes' e 'profissionais' */
+    color: var(--orange);
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+/* Estilos para a grade de passos (Steps) */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas para os passos */
+    gap: 30px; /* Espaçamento entre os passos */
+    margin-bottom: 40px; /* Espaçamento antes do botão */
+}
+
+.step h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--dark-blue);
+}
+
+.step p {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    margin-bottom: 0; 
+}
+
+
+.btn-primary {
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 16px 32px;
+    border-radius: 50px; 
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o Card de Informações/Suporte */
+.info-card {
+    flex: 1; /* Ocupa 1 parte do espaço flex */
+    background-color: var(--light-gray);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    align-self: flex-start; /* Alinha o card ao topo de sua coluna */
+    min-width: 280px; /* Garante que o card não fique muito pequeno */
+}
+
+.info-card h2 {
+    color: var(--dark-blue);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--orange);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.info-card p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: var(--text-gray);
+}
+
+.info-card strong {
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.info-card a {
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.info-card a:hover {
+    text-decoration: underline;
+}
+
+.btn-outline { /* Estilo para o botão "Ver Perguntas Frequentes" */
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+/* --- MEDIA QUERIES (RESPONSIVIDADE) --- */
+
+/* Para tablets e telas menores (abaixo de 992px) */
+@media (max-width: 992px) {
+    .section .container {
+        flex-direction: column; /* Empilha as colunas */
+        text-align: center; /* Centraliza o texto */
+        gap: 40px;
+    }
+
+    .text-section {
+        max-width: 100%; /* Ocupa toda a largura */
+        flex: auto; /* Ajuste automático de flex */
+    }
+    
+    .info-card {
+        max-width: 450px; /* Limita a largura do card para não ficar muito largo */
+        margin: 0 auto; /* Centraliza o card */
+        align-self: center; /* Centraliza o card no eixo cruzado */
+        flex: auto;
+    }
+
+    .steps {
+        grid-template-columns: 1fr; /* Passos em coluna simples */
+        gap: 20px;
+        text-align: left; /* Alinha o texto dos passos à esquerda */
+    }
+    
+    .steps .step {
+        padding-left: 10px;
+        border-left: 4px solid var(--orange); /* Adiciona um marcador visual */
+    }
+
+    .section-title, .section-description {
+        text-align: center; /* Centraliza o título e a descrição */
+    }
+    .btn-primary {
+        margin: 0 auto 30px auto; /* Centraliza o botão e adiciona margem */
+    }
+}
+
+/* Para celulares (abaixo de 768px) */
+@media (max-width: 768px) {
+    /* --- Ajustes no Cabeçalho --- */
+    .navbar .container {
+        flex-direction: column;
+        gap: 25px;
+        border-bottom: none;
+    }
+
+    /* --- Ajustes na Seção Principal --- */
+    .section { /* Use .section aqui */
+        padding: 60px 0;
+    }
+
+    .section-title { /* Use .section-title aqui */
+        font-size: 2.2rem;
+    }
+
+    .section-description { /* Use .section-description aqui */
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+    
+    .info-card h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Ajuste fino para celulares bem pequenos (abaixo de 480px) */
+@media (max-width: 480px) {
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .section-title { /* Use .section-title aqui */
+        font-size: 1.8rem;
+    }
+}

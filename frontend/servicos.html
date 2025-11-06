@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Serviços - Fixsi{% endblock %}
+
+{% block content %}
+
+    <div class="section servicos-page">
+        <div class="container">
+            <div class="header-servicos">
+                <p class="section-subtitle">Reparos e Manutenção</p>
+                <h1 class="section-title">
+                    Encontre o serviço ideal para seu <span class="highlight">reparo</span> ou <span class="highlight">reforma</span>
+                </h1>
+            </div>
+            
+            <h2 class="section-heading">Categorias de Serviços</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow prev-arrow" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-container">
+                    
+                    <a href="#" class="servico-card">
+                        <div class="icon">⚡</div>
+                        <h3>Eletricista</h3>
+                        <p>Instalação, reparo e manutenção elétrica.</p>
+                    </a>
+                    
+                    <a href="#" class="servico-card">
+                        <div class="icon">💧</div>
+                        <h3>Encanador</h3>
+                        <p>Reparos hidráulicos, vazamentos e desentupimento.</p>
+                    </a>
+                    
+                    <a href="#" class="servico-card">
+                        <div class="icon">🧱</div>
+                        <h3>Pedreiro/Reformas</h3>
+                        <p>Pequenas obras, alvenaria e acabamentos.</p>
+                    </a>
+                    
+                    <a href="#" class="servico-card">
+                        <div class="icon">🎨</div>
+                        <h3>Pintor</h3>
+                        <p>Pintura de paredes, teto e tratamento de superfícies.</p>
+                    </a>
+
+                    <a href="#" class="servico-card">
+                        <div class="icon">🔧</div>
+                        <h3>Montador de Móveis</h3>
+                        <p>Montagem e desmontagem de móveis novos ou usados.</p>
+                    </a>
+                    
+                    <a href="#" class="servico-card">
+                        <div class="icon">🔨</div>
+                        <h3>Marido de Aluguel</h3>
+                        <p>Serviços gerais, como fixação de quadros e prateleiras.</p>
+                    </a>
+
+                </div>
+                <button class="carousel-arrow next-arrow" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
+            </div> <h2 class="section-heading">Categorias de Ferramentas</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow prev-arrow" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-container">
+                    
+                    <a href="#" class="servico-card">
+                        <div class="icon">🚧</div>
+                        <h3>Betoneiras</h3>
+                        <p>Mistura de concreto e argamassa para obras.</p>
+                    </a>
+                    
+                    <a href="#" class="servico-card">
+                        <div class="icon">🔩</div>
+                        <h3>Serras e Cortes</h3>
+                        <p>Serras circulares, mármore e mais.</p>
+                    </a>
+                    
+                    <a href="#" class="servico-card">
+                        <div class="icon">💥</div>
+                        <h3>Marteletes</h3>
+                        <p>Perfuração e demolição de concreto.</p>
+                    </a>
+                    
+                    <a href="#" class="servico-card">
+                        <div class="icon">🪜</div>
+                        <h3>Escadas e Andaimes</h3>
+                        <p>Trabalho em altura com segurança.</p>
+                    </a>
+
+                    <a href="#" class="servico-card">
+                        <div class="icon">⚡</div>
+                        <h3>Geradores</h3>
+                        <p>Energia temporária para sua obra ou evento.</p>
+                    </a>
+
+                </div>
+                <button class="carousel-arrow next-arrow" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
+            </div> <div class="chamada-servicos">
+                <h2>É profissional de reparos?</h2>
+                <p>Cadastre-se e comece a receber pedidos de orçamento na sua região. <a href="{% url 'login' %}" class="link-orange">Cadastre-se agora</a>!</p>
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const carouselWrappers = document.querySelectorAll('.carousel-wrapper');
+        carouselWrappers.forEach(wrapper => {
+            const prevButton = wrapper.querySelector('.prev-arrow');
+            const nextButton = wrapper.querySelector('.next-arrow');
+            const carouselContainer = wrapper.querySelector('.carousel-container');
+            const scrollAmount = 300; 
+            nextButton.addEventListener('click', () => {
+                carouselContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+            prevButton.addEventListener('click', () => {
+                carouselContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+        });
+    });
+</script>
+{% endblock %}

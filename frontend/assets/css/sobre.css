@@ -40,10 +40,10 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--white); color
 .contact-details {
     flex-basis: 45%;
     padding: 30px;
-    border-radius: 8px; /* Cantos suavemente arredondados */
-    border-top: 4px solid var(--dark-blue); /* Borda superior azul para dar um toque da marca */
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07); /* Sombra sutil para "flutuar" na página */
-    background-color: var(--white); /* Fundo branco para se integrar melhor */
+    border-radius: 8px; 
+    border-top: 4px solid var(--dark-blue); 
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07); 
+    background-color: var(--white); 
 }
 .contact-details h2 {
     font-size: 1.8rem;

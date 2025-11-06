@@ -58,7 +58,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'fixsi_db',
         'USER': 'root',
-        'PASSWORD': '1234',   # troque pela sua senha real do MySQL
+        'PASSWORD': '12345',   # troque pela sua senha real do MySQL
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {

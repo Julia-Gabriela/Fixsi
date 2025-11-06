@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ========================
+   Variáveis e Reset (Estilos Globais)
+   ======================== */
+:root {
+    --orange: #F97316;
+    --dark-blue: #05263C;
+    --text-gray: #6D6666;
+    --light-gray: #e2e8f0; 
+    --light-gray-bg: #f8f9fa; 
+    --white: #FFFFFF;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Poppins', sans-serif; 
+    background-color: var(--white); 
+    color: var(--dark-blue);
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+a { text-decoration: none; }
+
+/* ========================
+   Navbar (Estilos principais)
+   ======================== */
+.navbar { padding: 15px 0; background-color: var(--white); border-bottom: 1px solid var(--light-gray); }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { height: 70px; }
+.nav-menu ul { list-style: none; display: flex; gap: 35px; }
+.nav-menu ul li a { text-decoration: none; color: var(--dark-blue); font-weight: 500; font-size: 1rem; transition: color 0.3s; }
+.nav-menu ul li a:hover { color: var(--orange); }
+.nav-menu ul li.active a { color: var(--orange); font-weight: 600; }
+
+/* ========================
+   Navbar: LADO DIREITO (LOGADO)
+   ======================== */
+.nav-action-right { display: flex; align-items: center; gap: 20px; }
+.search-bar { display: flex; align-items: center; background-color: var(--light-gray-bg); border: 1px solid var(--light-gray); border-radius: 20px; padding: 5px 12px; }
+.search-bar input { border: none; background: none; outline: none; font-family: 'Poppins', sans-serif; font-size: 0.9rem; color: var(--text-gray); }
+.search-bar .search-icon { color: var(--text-gray); font-size: 0.9rem; margin-left: 5px; }
+.user-icon-link { color: var(--dark-blue); font-size: 1.5rem; transition: color 0.3s; }
+.user-icon-link:hover { color: var(--orange); }
+.user-icon-link.active { color: var(--orange); }
+
+/* ========================
+   Navbar: LADO DIREITO (DESLOGADO)
+   ======================== */
+
+.btn-signup {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+.btn-signup:hover {
+    opacity: 0.9;
+}
+
+/* ========================
+   Estilos da Página de Serviços
+   ======================== */
+.banners-container { display: flex; max-width: 1100px; margin: 20px auto 0 auto; padding: 0 20px; gap: 20px; height: 180px; }
+.banner { flex: 1; border-radius: 8px; padding: 25px; color: var(--white); background-size: cover; background-position: center; }
+.banner h3 { font-size: 1.8rem; font-weight: 700; text-transform: uppercase; }
+.banner p { font-size: 0.9rem; max-width: 70%; margin-bottom: 15px; }
+.banner a { color: var(--white); font-weight: 600; font-size: 0.9rem; border-bottom: 2px solid var(--white); align-self: flex-start; }
+.banner-tools { background-color: #5a6a7a; }
+.banner-carpentry { background-color: #007991; }
+.section { padding: 60px 0; }
+.header-servicos { text-align: center; max-width: 700px; margin: 0 auto 50px auto; }
+.section-subtitle { font-size: 1rem; font-weight: 600; color: var(--orange); margin-bottom: 5px; text-transform: uppercase; }
+.section-title { font-size: 2.75rem; font-weight: 700; line-height: 1.3; margin-bottom: 20px; color: var(--dark-blue); }
+.highlight { color: var(--orange); }
+.section-heading { font-size: 1.75rem; font-weight: 600; color: var(--dark-blue); margin-bottom: 20px; }
+.carousel-wrapper { position: relative; padding: 0 40px; margin: 0 -40px; }
+.carousel-container { display: flex; gap: 20px; overflow-x: auto; padding: 10px 5px 20px 5px; margin-bottom: 40px; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; }
+.carousel-container::-webkit-scrollbar { display: none; }
+.servico-card { flex-shrink: 0; width: 280px; background-color: var(--light-gray-bg); padding: 30px; border-radius: 10px; text-align: center; border: 1px solid var(--light-gray); transition: transform 0.3s, box-shadow 0.3s; color: var(--dark-blue); }
+.servico-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+.servico-card .icon { font-size: 3rem; margin-bottom: 10px; line-height: 1; }
+.servico-card h3 { font-size: 1.4rem; font-weight: 600; color: var(--dark-blue); margin-bottom: 5px; }
+.servico-card p { font-size: 1rem; color: var(--text-gray); line-height: 1.5; }
+.carousel-arrow { position: absolute; top: 50%; transform: translateY(-80%); z-index: 10; background-color: var(--white); color: var(--dark-blue); border: 1px solid var(--light-gray); border-radius: 50%; width: 45px; height: 45px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: all 0.3s ease; }
+.carousel-arrow:hover { background-color: var(--orange); color: var(--white); border-color: var(--orange); }
+.carousel-arrow.prev-arrow { left: 10px; }
+.carousel-arrow.next-arrow { right: 10px; }
+.chamada-servicos { text-align: center; padding: 40px; background-color: var(--dark-blue); color: var(--white); border-radius: 10px; margin-top: 20px; }
+.chamada-servicos h2 { font-size: 2rem; margin-bottom: 10px; }
+.chamada-servicos p { font-size: 1.1rem; color: var(--light-gray); }
+.link-orange { color: var(--orange); text-decoration: underline; font-weight: 600; }
+@media (max-width: 768px) {
+    .navbar .container { flex-direction: column; gap: 25px; }
+    .banners-container { flex-direction: column; height: auto; gap: 15px; }
+    .section-title { font-size: 2.2rem; }
+    .servico-card { width: 240px; }
+    .carousel-arrow { display: none; }
+    .carousel-wrapper { padding: 0; margin: 0; }
+}

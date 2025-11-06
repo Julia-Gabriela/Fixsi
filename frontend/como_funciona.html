@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Como Funciona - Fixsi{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/como_funciona.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <div class="text-section">
+                <p class="section-subtitle">Como Funciona</p>
+                <h1 class="section-title">
+                    Plataforma simples e segura para conectar <span class="highlight">clientes</span> e <span class="highlight">profissionais</span>
+                </h1>
+                <p class="section-description">
+                    O Fixsi é intuitivo e foi pensado para facilitar a vida de quem precisa de serviços ou quer oferecê-los.
+                    Em poucos passos, você se cadastra, encontra o profissional ideal e combina tudo de forma segura.
+                </p>
+
+                <div class="steps">
+                    <div class="step">
+                        <h3>1. Cadastre-se gratuitamente</h3>
+                        <p>Crie sua conta como cliente ou profissional. É rápido e leva apenas alguns minutos.</p>
+                    </div>
+                    <div class="step">
+                        <h3>2. Escolha ou ofereça um serviço</h3>
+                        <p>Procure o serviço que precisa ou disponibilize o que você oferece, de acordo com sua região.</p>
+                    </div>
+                    <div class="step">
+                        <h3>3. Combine tudo pelo chat</h3>
+                        <p>Converse com o outro usuário, defina valores e horários, e mantenha tudo dentro da plataforma.</p>
+                    </div>
+                    <div class="step">
+                        <h3>4. Avalie e fortaleça a comunidade</h3>
+                        <p>Depois de cada atendimento, avalie. Assim, mantemos uma rede segura e de confiança.</p>
+                    </div>
+                </div>
+
+                <a href="{% url 'login' %}" class="btn-primary">Comece agora</a>
+            </div>
+
+            <div class="info-card">
+                <h2>Suporte Fixsi</h2>
+                <p><strong>E-mail:</strong> suporte@fixsi.com.br</p>
+                <p><strong>Horário:</strong> Segunda a Sexta, das 9h às 18h</p>
+                <a href="#" class="btn-outline">Ver Perguntas Frequentes</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

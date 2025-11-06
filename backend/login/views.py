@@ -16,7 +16,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             messages.success(request, f"Bem-vindo(a), {user.first_name or user.username}!")
-            return redirect('area_logada')
+            return redirect('dashboard')
         else:
             messages.error(request, 'Usuário ou senha incorretos.')
 
