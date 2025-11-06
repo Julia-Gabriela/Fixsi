@@ -1,85 +1,6 @@
-/* Importando a fonte Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-
-:root {
-    --orange: #F97316;
-    --dark-blue: #05263C;
-    --text-gray: #6D6666;
-    --light-gray: #e2e8f0; 
-    --white: #FFFFFF;
-}
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--white);
-    color: var(--dark-blue);
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-
-.navbar {
-    padding: 15px 0;
-    background-color: var(--white);
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--light-gray); 
-    padding-bottom: 15px;
-}
-
-.logo {
-    height: 70px; 
-}
-
-.nav-menu ul {
-    list-style: none;
-    display: flex;
-    gap: 35px; 
-}
-
-.nav-menu ul li a {
-    text-decoration: none;
-    color: var(--dark-blue);
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.3s;
-}
-
-.nav-menu ul li a:hover {
-    color: var(--orange);
-}
-
-.btn-signup {
-    background-color: var(--dark-blue);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: opacity 0.3s;
-}
-
-.btn-signup:hover {
-    opacity: 0.9;
-}
-
-
+/* ========================
+   Estilos da Seção "Hero"
+   ======================== */
 .hero {
     padding: 100px 0;
 }
@@ -104,6 +25,10 @@ body {
 }
 
 .highlight-orange {
+    /* As variáveis --orange, --text-gray, etc., 
+       já funcionam pois são carregadas pelo 
+       servicos.css no base.html
+    */
     color: var(--orange);
 }
 
@@ -142,7 +67,9 @@ body {
 }
 
 
-
+/* ========================
+   Estilos Responsivos (Apenas da Seção "Hero")
+   ======================== */
 
 /* Para tablets e telas menores (abaixo de 992px) */
 @media (max-width: 992px) {
@@ -161,14 +88,6 @@ body {
 
 /* Para celulares (abaixo de 768px) */
 @media (max-width: 768px) {
-    /* --- Ajustes no Cabeçalho --- */
-    .navbar .container {
-        /* Empilha o conteúdo do cabeçalho: logo, menu e botão */
-        flex-direction: column;
-        gap: 25px; /* Espaçamento entre os itens empilhados */
-        border-bottom: none; /* Remove a linha divisória em telas pequenas */
-    }
-
     /* --- Ajustes na Seção Principal --- */
     .hero {
         padding: 60px 0; /* Diminui o espaçamento superior e inferior */
@@ -190,13 +109,6 @@ body {
 
 /* Ajuste fino para celulares bem pequenos (abaixo de 480px) */
 @media (max-width: 480px) {
-    .nav-menu ul {
-        /* Empilha os links do menu para não ficarem espremidos */
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
     .hero-text h1 {
         font-size: 1.8rem; /* Título ainda menor */
     }

@@ -1,33 +1,15 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nós - Fixsi</title>
+
+{% block title %}Sobre Nós - Fixsi{% endblock %}
+
+{% block styles %}
     <link rel="stylesheet" href="{% static 'css/sobre.css' %}">
-</head>
-<body>
+{% endblock %}
 
-    <header class="navbar">
-        <div class="container">
-            <div class="logo-container">
-                <a href="{% url 'home' %}"><img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="logo"></a>
-            </div>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="{% url 'como_funciona' %}">Como funciona</a></li>
-                    <li><a href="{% url 'servicos' %}">Serviços</a></li>
-                    <li class="active"><a href="{% url 'sobre_nos' %}">Sobre nós</a></li>
-                </ul>
-            </nav>
-            <div class="nav-action">
-                <a href="{% url 'login' %}" class="btn-signup">Entre ou Cadastre-se</a>
-            </div>
-        </div>
-    </header>
 
-    <main class="hero">
+{% block content %}
+    <section class="hero">
         <div class="container hero-content">
 
             <div class="hero-text">
@@ -56,11 +38,11 @@
                     <p>Segunda a Sexta, das 9h às 18h</p>
                 </div>
             </div>
-<!-- This is a comment -->
         </div>
-    </main>
+    </section>
+{% endblock %}
 
+
+{% block scripts %}
     <script src="{% static 'js/script.js' %}"></script>
-
-</body>
-</html>
+{% endblock %}

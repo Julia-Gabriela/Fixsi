@@ -1,93 +1,62 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Painel - Fixsi</title>
-    <link rel="stylesheet" href="{% static 'css/servicos.css' %}">
+
+{% block title %}Meu Painel - Fixsi{% endblock %}
+
+{% block styles %}
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+{% endblock %}
 
-    <header class="navbar">
-        <div class="container">
-            <div class="logo-container">
-                <a href="{% url 'home' %}">
-                    <img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="logo">
-                </a>
+{% block content %}
+<main class="dashboard-main">
+    <div class="dashboard-container">
+
+        <aside class="profile-sidebar">
+            <div class="avatar-wrapper">
+                <img src="{{ perfil.imagem|default:'https://placehold.co/150x150/F97316/white?text=User' }}" alt="Avatar do Usuário" class="avatar">
             </div>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="{% url 'como_funciona' %}">Como funciona</a></li>
-                    <li><a href="{% url 'servicos' %}">Serviços</a></li>
-                    <li><a href="{% url 'sobre_nos' %}">Sobre nós</a></li>
-                </ul>
-            </nav>
-            <div class="nav-action-right">
-                <div class="search-bar">
-                    <input type="text" placeholder="Pesquisar">
-                    <i class="fas fa-search search-icon"></i>
+            <h2>{{ user.get_full_name|default:user.username }}</h2>
+            
+            <a href="#" class="profile-btn btn-view"><i class="fas fa-eye"></i> Ver perfil público</a>
+            <a href="#" class="profile-btn btn-edit"><i class="fas fa-pencil-alt"></i> Editar perfil</a>
+            <a href="#" class="profile-btn btn-logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            <a href="{% url 'home' %}" class="profile-btn btn-inicio"><i class="fas fa-home"></i> Início</a>
+        </aside>
+
+        <section class="dashboard-content">
+            <div class="actions-box">
+                <h3>Serviços</h3>
+                <div class="actions-grid">
+                    <a href="#" class="action-card">
+                        <div class="action-icon"><i class="fas fa-plus"></i></div>
+                        <span>Novo Serviço</span>
+                    </a>
+                    <a href="#" class="action-card">
+                        <div class="action-icon"><i class="fas fa-clock"></i></div>
+                        <span>Agendados</span>
+                    </a>
+                    <a href="#" class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-envelope"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <span>Mensagens</span>
+                    </a>
                 </div>
-                <a href="{% url 'dashboard' %}" class="user-icon-link active">
-                    <i class="fas fa-user"></i>
-                </a>
+                <h3>Histórico</h3>
+                <div class="actions-grid">
+                    <a href="#" class="action-card">
+                        <div class="action-icon"><i class="fas fa-tools"></i></div>
+                        <span>Aluguéis e serviços</span>
+                    </a>
+                    <a href="#" class="action-card">
+                        <div class="action-icon"><i class="fas fa-star"></i></div>
+                        <span>Avaliações</span>
+                    </a>
+                </div>
             </div>
-        </div>
-    </header>
+        </section>
 
-    <main class="dashboard-main">
-        <div class="dashboard-container">
-
-            <aside class="profile-sidebar">
-                <div class="avatar-wrapper">
-                    <img src="{{ perfil.imagem|default:'https://placehold.co/150x150/F97316/white?text=User' }}" alt="Avatar do Usuário" class="avatar">
-                </div>
-                <h2>{{ user.get_full_name|default:user.username }}</h2>
-                
-                <a href="#" class="profile-btn btn-view"><i class="fas fa-eye"></i> Ver perfil público</a>
-                <a href="#" class="profile-btn btn-edit"><i class="fas fa-pencil-alt"></i> Editar perfil</a>
-                <a href="#" class="profile-btn btn-logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
-                <a href="{% url 'home' %}" class="profile-btn btn-inicio"><i class="fas fa-home"></i> Início</a>
-            </aside>
-
-            <section class="dashboard-content">
-                <div class="actions-box">
-                    <h3>Serviços</h3>
-                    <div class="actions-grid">
-                        <a href="#" class="action-card">
-                            <div class="action-icon"><i class="fas fa-plus"></i></div>
-                            <span>Novo Serviço</span>
-                        </a>
-                        <a href="#" class="action-card">
-                            <div class="action-icon"><i class="fas fa-clock"></i></div>
-                            <span>Agendados</span>
-                        </a>
-                        <a href="#" class="action-card">
-                            <div class="action-icon">
-                                <i class="fas fa-envelope"></i>
-                                <span class="notification-badge">3</span>
-                            </div>
-                            <span>Mensagens</span>
-                        </a>
-                    </div>
-                    <h3>Histórico</h3>
-                    <div class="actions-grid">
-                        <a href="#" class="action-card">
-                            <div class="action-icon"><i class="fas fa-tools"></i></div>
-                            <span>Aluguéis e serviços</span>
-                        </a>
-                        <a href="#" class="action-card">
-                            <div class="action-icon"><i class="fas fa-star"></i></div>
-                            <span>Avaliações</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-    </main>
-    
-</body>
-</html>
+    </div>
+</main>
+{% endblock %}

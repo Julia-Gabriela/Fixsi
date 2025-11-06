@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, get_object_or_404  
-from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Perfil
+from django.contrib.auth import logout
 
 def home_view(request):
     return render(request, 'home.html')
@@ -29,3 +29,7 @@ def dashboard_view(request):
         'perfil': perfil
     }
     return render(request, 'dashboard.html', context)
+
+def logout_view(request):
+    logout(request)
+    return redirect('home') 

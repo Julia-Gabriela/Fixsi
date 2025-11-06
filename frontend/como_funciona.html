@@ -1,39 +1,15 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como Funciona - Fixsi</title>
+
+{% block title %}Como Funciona - Fixsi{% endblock %}
+
+{% block styles %}
     <link rel="stylesheet" href="{% static 'css/como_funciona.css' %}">
-</head>
-<body>
+{% endblock %}
 
-    <!-- Navbar -->
-<header class="navbar">
-    <div class="container">
-      <div class="logo-container">
-        <a href="{% url 'home' %}">
-          <img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="logo">
-        </a>
-      </div>
 
-      <nav class="nav-menu">
-        <ul>
-          <li class="active"><a href="{% url 'como_funciona' %}">Como funciona</a></li>
-          <li><a href="{% url 'servicos' %}">Serviços</a></li>
-          <li><a href="{% url 'sobre_nos' %}">Sobre nós</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-action">
-        <a href="{% url 'login' %}" class="btn-signup">Entre ou Cadastre-se</a>
-      </div>
-    </div>
-  </header>
-
-    <!-- Conteúdo principal -->
-    <main class="section">
+{% block content %}
+    <section class="section">
         <div class="container">
             <div class="text-section">
                 <p class="section-subtitle">Como Funciona</p>
@@ -74,7 +50,5 @@
                 <a href="#" class="btn-outline">Ver Perguntas Frequentes</a>
             </div>
         </div>
-    </main>
-
-</body>
-</html>
+    </section>
+{% endblock %}
