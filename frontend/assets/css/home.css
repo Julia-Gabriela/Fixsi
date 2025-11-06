@@ -25,10 +25,6 @@
 }
 
 .highlight-orange {
-    /* As variáveis --orange, --text-gray, etc., 
-       já funcionam pois são carregadas pelo 
-       servicos.css no base.html
-    */
     color: var(--orange);
 }
 
@@ -74,35 +70,32 @@
 /* Para tablets e telas menores (abaixo de 992px) */
 @media (max-width: 992px) {
     .hero-content {
-        /* Coloca o texto e a imagem um sobre o outro */
         flex-direction: column;
         text-align: center;
         gap: 40px;
     }
 
     .hero-text {
-        /* Garante que o texto ocupe todo o espaço disponível */
         max-width: 100%;
     }
 }
 
 /* Para celulares (abaixo de 768px) */
 @media (max-width: 768px) {
-    /* --- Ajustes na Seção Principal --- */
     .hero {
-        padding: 60px 0; /* Diminui o espaçamento superior e inferior */
+        padding: 60px 0;
     }
 
     .hero-text h1 {
-        font-size: 2.2rem; /* Diminui o tamanho do título principal */
+        font-size: 2.2rem; 
     }
 
     .hero-text p {
-        font-size: 1rem; /* Diminui o texto do parágrafo */
+        font-size: 1rem; 
     }
 
     .btn-primary {
-        padding: 14px 28px; /* Diminui um pouco o botão */
+        padding: 14px 28px; 
         font-size: 1rem;
     }
 }
@@ -110,6 +103,6 @@
 /* Ajuste fino para celulares bem pequenos (abaixo de 480px) */
 @media (max-width: 480px) {
     .hero-text h1 {
-        font-size: 1.8rem; /* Título ainda menor */
+        font-size: 1.8rem; 
     }
 }

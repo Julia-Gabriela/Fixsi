@@ -8,7 +8,7 @@
     --dark-blue: #05263C;
     --text-gray: #6D6666;
     --light-gray: #e2e8f0; 
-    --light-gray-bg: #f8f9fa; /* Fundo para os cards */
+    --light-gray-bg: #f8f9fa; 
     --white: #FFFFFF;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
