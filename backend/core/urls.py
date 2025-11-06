@@ -1,17 +1,18 @@
 from django.contrib import admin
 from django.urls import path, include
-from app import views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),           
-    path('', views.home_view, name='home'),    
+    path('admin/', admin.site.urls),        
+    
+    # 2. Inclui as URLs do app 'login' (ex: /login/)
     path('login/', include('login.urls')),  
-    path('sobre/', views.sobre_view, name='sobre_nos'),
-    path('como-funciona/', views.como_funciona_view, name='como_funciona'),
-    path('servicos/', views.servicos_view, name='servicos'),
+    path('', include('app.urls')), 
+
+    # 4. As linhas abaixo foram REMOVIDAS daqui,
+    # pois elas agora vivem dentro de 'app.urls.py'
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

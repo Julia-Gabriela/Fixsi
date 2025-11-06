@@ -20,7 +20,7 @@
          <input type="email" name="username" placeholder="Digite seu e-mail" required>
          <input type="password" name="password" placeholder="Digite sua senha" required>
         <a href="#" class="forgot-password">Esqueci minha senha!</a>
-        <button type="submit" class="btn-login">Entrar</button>
+        {% csrf_token %} <button type="submit" class="btn-login">Entrar</button>
     </form>
 
 {% if messages %}
