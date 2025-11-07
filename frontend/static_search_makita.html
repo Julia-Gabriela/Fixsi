@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Resultados para "Makita"{% endblock %}
+
+{% block content %}
+<main class="service-page-main">
+    
+    <!-- Título estático -->
+    <h2 class="search-results-title">Resultados para: <strong>"{{ query|default:'Makita' }}"</strong></h2>
+
+    <!-- Lista de Ferramentas Estáticas com Imagens Corrigidas -->
+    <div class="service-list-container">
+        
+        <article class="service-card">
+            <div class="service-image">
+                <img src="https://images.pexels.com/photos/1709002/pexels-photo-1709002.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" 
+                     alt="Martelete"
+                     onerror="this.onerror=null;this.src='https://placehold.co/100x100/E5E7EB/333?text=Ferramenta';">
+            </div>
+            <div class="service-info">
+                <h3>Martelete perfurador 2kg</h3>
+                <p>Para perfuração em concreto e pequenas demolições.</p>
+            </div>
+            <a href="{% url 'ferramenta_modal' tool_type='martelete' %}" class="service-details-btn">Detalhes</a>
+        </article>
+
+        <article class="service-card">
+            <div class="service-image">
+                <!-- Imagem da Parafusadeira (que estava trocada) -->
+                <img src="https://images.pexels.com/photos/1420016/pexels-photo-1420016.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" 
+                     alt="Parafusadeira"
+                     onerror="this.onerror=null;this.src='https://placehold.co/100x100/E5E7EB/333?text=Ferramenta';">
+            </div>
+            <div class="service-info">
+                <h3>Parafusadeira a bateria</h3>
+                <p>Kit 12V com impacto, ideal para montagem de móveis.</p>
+            </div>
+            <a href="{% url 'ferramenta_modal' tool_type='parafusadeira' %}" class="service-details-btn">Detalhes</a>
+        </article>
+
+        <article class="service-card">
+            <div class="service-image">
+                <img src="https://images.pexels.com/photos/1750268/pexels-photo-1750268.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" 
+                     alt="Serra Circular"
+                     onerror="this.onerror=null;this.src='https://placehold.co/100x100/E5E7EB/333?text=Ferramenta';">
+            </div>
+            <div class="service-info">
+                <h3>Serra Circular</h3>
+                <p>Cortes precisos em madeira, 7 1/4 polegadas.</p>
+            </div>
+            <!-- 👇 CORREÇÃO (removido o '.' de class.) 👇 -->
+            <a href="{% url 'ferramenta_modal' tool_type='serra_circular' %}" class="service-details-btn">Detalhes</a>
+        </article>
+
+        <article class="service-card">
+            <div class="service-image">
+                <img src="https://images.pexels.com/photos/4792479/pexels-photo-4792479.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" 
+                     alt="Lixadeira"
+                     onerror="this.onerror=null;this.src='https://placehold.co/100x100/E5E7EB/333?text=Ferramenta';">
+            </div>
+            <div class="service-info">
+                <h3>Lixadeira Orbital</h3>
+                <p>Para acabamento fino em superfícies de madeira e massa.</p>
+            </div>
+           <a href="{% url 'ferramenta_modal' tool_type='lixadeira' %}" class="service-details-btn">Detalhes</a>
+        </article>
+
+        <article class="service-card">
+            <div class="service-image">
+                <!-- Imagem da Tupia (estava duplicada) -->
+                <img src="https://images.pexels.com/photos/8005396/pexels-photo-8005396.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" 
+                     alt="Tupia"
+                     onerror="this.onerror=null;this.src='https://placehold.co/100x100/E5E7EB/333?text=Ferramenta';">
+            </div>
+            <div class="service-info">
+                <h3>Tupia de Coluna</h3>
+                <p>Para cortes, entalhes e acabamentos professionals em madeira.</p>
+            </div>
+            <!-- 👇 CORREÇÃO (removido o '.' de class.) 👇 -->
+            <a href="{% url 'ferramenta_modal' tool_type='tupia' %}" class="service-details-btn">Detalhes</a>
+        </article>
+
+    </div>
+</main>
+{% endblock %}

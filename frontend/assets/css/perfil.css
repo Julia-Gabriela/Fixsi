@@ -1,0 +1,251 @@
+/* static/css/perfil.css */
+
+/* Importa as variáveis de cor */
+@import url('login.css'); 
+/* Importa os estilos dos cards de avaliação */
+@import url('avaliacoes.css'); 
+
+body {
+    background-color: #f0f2f5; /* Fundo cinza escuro */
+}
+
+/* Container principal (sidebar + conteúdo) */
+.profile-page-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+}
+
+/* ========================
+   Sidebar (Coluna Esquerda)
+   ======================== */
+.profile-page-sidebar {
+    flex: 0 0 280px; 
+    text-align: center;
+}
+.profile-page-sidebar .avatar-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    border: 4px solid var(--white);
+    background-color: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Garante que a imagem fique redonda */
+}
+/* Regra para a imagem de perfil (avatar) */
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-page-sidebar h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    margin-bottom: 5px;
+    word-wrap: break-word; /* Para nomes longos */
+}
+.profile-page-sidebar .rating {
+    font-size: 1.1rem;
+    color: #FFC107;
+    margin-bottom: 5px;
+}
+.profile-page-sidebar .location {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* Botões da Sidebar */
+.profile-btn {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    transition: all 0.3s;
+    cursor: pointer; /* Adicionado para botões */
+    border: none; /* Reset de borda para botões */
+}
+.profile-btn i { font-size: 1.1rem; }
+.profile-btn.btn-message { background-color: var(--orange); color: var(--white); }
+.profile-btn.btn-message:hover { opacity: 0.9; }
+.profile-btn.btn-edit { background-color: var(--white); color: var(--dark-blue); border: 1px solid var(--light-gray); }
+.profile-btn.btn-edit:hover { background-color: var(--light-gray-bg); }
+.profile-btn.btn-inicio { background-color: #6c757d; color: var(--white); margin-top: 20px; }
+.profile-btn.btn-inicio:hover { opacity: 0.9; }
+
+/* 👇 NOVOS ESTILOS DE BOTÃO (Edição) 👇 */
+.profile-btn.btn-confirm { background-color: #28a745; color: var(--white); }
+.profile-btn.btn-confirm:hover { background-color: #218838; }
+.profile-btn.btn-cancel { background-color: #DC3545; color: var(--white); }
+.profile-btn.btn-cancel:hover { background-color: #c82333; }
+.profile-btn.btn-cancel-inline { background-color: var(--white); color: #DC3545; border: 1px solid #DC3545; }
+.profile-btn.btn-cancel-inline:hover { background-color: #fdf2f2; }
+/* 👆 FIM DOS NOVOS ESTILOS DE BOTÃO 👆 */
+
+
+/* ========================
+   Conteúdo (Coluna Direita)
+   ======================== */
+.profile-page-content {
+    flex: 1;
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.profile-section {
+    margin-bottom: 35px;
+}
+.profile-section-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    margin: 0 0 20px 0;
+}
+
+/* Portifólio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+/* 👇 NOVO: Posição relativa para o ícone */
+.portfolio-item {
+    position: relative;
+}
+.portfolio-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Sobre */
+.profile-section p.about-text {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+}
+/* 👇 NOVO: Estilo para o textarea de edição */
+.profile-page-content textarea.about-text-edit {
+    width: 100%;
+    min-height: 120px;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    transition: all 0.3s;
+}
+.profile-page-content textarea.about-text-edit:focus {
+    border-color: var(--orange);
+    outline: none;
+    box-shadow: 0 0 5px rgba(249, 115, 22, 0.3);
+}
+
+/* Serviços Prestados */
+.service-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center; /* Adicionado */
+}
+.service-tag {
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative; /* 👇 NOVO: Posição relativa para o ícone */
+}
+
+/* Avaliações */
+/* ... (estilos de avaliação) ... */
+
+/* ==================================
+   👇 NOVOS ESTILOS P/ MODO DE EDIÇÃO 
+   ================================== */
+
+/* Ícones de deletar (escondidos por padrão) */
+.btn-delete-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: none; /* Escondido */
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+.btn-delete-icon:hover { background: rgba(220, 53, 69, 0.9); }
+
+/* Ícone 'x' das tags de serviço */
+.service-tag .btn-delete-icon {
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    background: #bbb;
+    color: white;
+    width: 20px;
+    height: 20px;
+    font-size: 0.8rem;
+}
+.service-tag .btn-delete-icon:hover { background: #DC3545; }
+
+/* Botão de adicionar (escondido por padrão) */
+.btn-add-tag {
+    background: none;
+    border: 2px dashed var(--light-gray);
+    color: var(--dark-blue);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: none; /* Escondido */
+    transition: all 0.3s;
+}
+.btn-add-tag:hover { border-color: var(--orange); color: var(--orange); }
+.btn-add-tag i { margin-right: 5px; }
+
+/* Quando .edit-mode está ativo, mostra os botões */
+.edit-mode .btn-delete-icon {
+    display: flex; 
+}
+.edit-mode .service-tag {
+    padding-right: 35px; /* Abre espaço para o 'x' */
+}
+.edit-mode .btn-add-tag {
+    display: inline-flex;
+    align-items: center;
+}
+
+
+/* Media Query p/ telas pequenas */
+/* ... (media queries) ... */

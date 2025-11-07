@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Perfil de {{ cliente_user.get_full_name|default:cliente_user.username }}{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/avaliacoes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="profile-page-container">
+
+    <!-- BARRA LATERAL (Esquerda) -->
+    <aside class="profile-page-sidebar">
+        
+        <!-- 👇 AVATAR ATUALIZADO 👇 -->
+        <div class="avatar-wrapper">
+            <img src="{{ cliente_perfil.imagem.url|default:'https://placehold.co/150x150/F97316/white?text=User' }}" alt="Avatar do Cliente" class="avatar">
+        </div>
+        
+        <!-- 👇 NOME ATUALIZADO 👇 -->
+        <h2>{{ cliente_user.get_full_name|default:cliente_user.username }}</h2>
+        
+        <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <div class="location">Brasília - DF</div>
+        
+        <a href="#" class="profile-btn btn-message"><i class="fas fa-envelope"></i> Enviar mensagem</a>
+        <!-- Escondemos o botão "Editar" se não for o nosso perfil -->
+        {% if user.id == cliente_user.id %}
+        <a href="{% url 'editar_perfil_profissional' %}" class="profile-btn btn-edit"><i class="fas fa-pencil-alt"></i> Editar</a>
+        {% endif %}
+        <a href="{% url 'dashboard' %}" class="profile-btn btn-inicio"><i class="fas fa-home"></i> Início</a>
+    </aside>
+
+    <!-- CONTEÚDO (Direita) [cite: image_214d6b.png] -->
+    <section class="profile-page-content">
+
+        <!-- Seção: Sobre -->
+        <div class="profile-section">
+            <h3 class="profile-section-title">Sobre</h3>
+            <!-- No futuro, isto pode vir de {{ cliente_perfil.bio }} -->
+            <p class="about-text">"Para mim, cada projeto é uma parceria. Gosto de alinhar expectativas e trabalhar em conjunto com o profissional para chegarmos ao melhor resultado. Busco mais do que um prestador de serviço, busco um parceiro de confiança para futuros projetos."</p>
+        </div>
+
+        <!-- Seção: Avaliações de profissionais -->
+        <div class="profile-section">
+            <h3 class="profile-section-title">Avaliações de profissionais</h3>
+            
+            <div class="profile-reviews-container">
+                <!-- Coluna 1 -->
+                <div class="review-column">
+                    <article class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-icon"><i class="fas fa-user"></i></div>
+                            <span class="reviewer-name">José Jobervaldo</span>
+                            <div class="stars">
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                            </div>
+                            <span class="rating-number">(5)</span>
+                        </div>
+                        <div class="review-body">
+                            <div class="service-name" style="font-size: 0.9rem; font-weight: 500; color: #333; margin-bottom: 12px;">Serviço: Reforma de Cozinha</div>
+                            <ul class="review-breakdown">
+                                <li class="breakdown-item">・ Comunicação: 👍</li>
+                                <li class="breakdown-item">・ Clareza do Projeto: 🤷‍♂️</li>
+                                <li class="breakdown-item">・ Pagamento: 🏦</li>
+                            </ul>
+                            <p>"Foi um prazer trabalhar com a Juliana. Ela tinha uma visão clara do que queria e a comunicação foi excelente durante toda a reforma. Recomendo!"</p>
+                        </div>
+                    </article>
+                </div>
+                <!-- Coluna 2 -->
+                <div class="review-column">
+                    <article class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-icon"><i class="fas fa-user"></i></div>
+                            <span class="reviewer-name">Marcos Andrade</span>
+                            <div class="stars">
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                            </div>
+                            <span class="rating-number">(5)</span>
+                        </div>
+                        <div class="review-body">
+                            <div class="service-name" style="font-size: 0.9rem; font-weight: 500; color: #333; margin-bottom: 12px;">Serviço: Instalação elétrica</div>
+                             <ul class="review-breakdown">
+                                <li class="breakdown-item">・ Comunicação: 👍</li>
+                                <li class="breakdown-item">・ Clareza do Projeto: 👍</li>
+                                <li class="breakdown-item">・ Pagamento: 🏦</li>
+                            </ul>
+                            <p>"Juliana é uma cliente muito cordial e realiza o pagamento pontualmente. Tivemos alguns desafios com a clareza do escopo, mas foi alinhado... Recomendo a todos."</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+{% endblock %}

@@ -1,0 +1,154 @@
+/* static/css/servicos_page.css */
+/* Estilos para a página de categorias de serviços */
+
+/* Importa variáveis (assumindo que estão em servicos.css) */
+@import url('servicos.css');
+
+body {
+    background-color: #f0f2f5; /* Fundo cinza claro */
+}
+
+.servicos-page .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.header-servicos {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.section-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--orange);
+    margin-bottom: 10px;
+}
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    line-height: 1.3;
+}
+.section-title .highlight {
+    color: var(--orange);
+}
+
+.section-heading {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--light-gray);
+    padding-bottom: 10px;
+}
+
+/* Carrossel */
+.carousel-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+}
+.carousel-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 10px;
+    /* Esconde a barra de rolagem */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE e Edge */
+}
+.carousel-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari e Opera */
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    color: var(--dark-blue);
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+}
+.carousel-arrow:hover {
+    background-color: var(--orange);
+    color: var(--white);
+    border-color: var(--orange);
+}
+.prev-arrow { left: -15px; }
+.next-arrow { right: -15px; }
+
+/* Card de Serviço (Categoria) */
+.servico-card {
+    flex: 0 0 240px; /* Largura fixa para cada card */
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid var(--light-gray);
+    transition: all 0.3s;
+    text-decoration: none;
+    color: var(--text-color);
+}
+.servico-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-color: var(--orange);
+}
+.servico-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.servico-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    margin-bottom: 8px;
+}
+.servico-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Chamada para Ação */
+.chamada-servicos {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 40px;
+}
+.chamada-servicos h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.chamada-servicos p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.chamada-servicos .link-orange {
+    color: var(--orange);
+    font-weight: 600;
+    text-decoration: underline;
+}
+.chamada-servicos .link-orange:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .carousel-arrow { display: none; } /* Esconde setas no mobile */
+    .servico-card { flex: 0 0 200px; }
+    .section-title { font-size: 1.8rem; }
+}

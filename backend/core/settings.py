@@ -58,7 +58,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'fixsi_db',
         'USER': 'root',
-        'PASSWORD': '12345',   # troque pela sua senha real do MySQL
+        'PASSWORD': 'c@tolic@',   # troque pela sua senha real do MySQL
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
@@ -89,3 +89,6 @@ STATICFILES_DIRS = [
 
 # Campo padrão do banco
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Imprime o e-mail no console em vez de enviar
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

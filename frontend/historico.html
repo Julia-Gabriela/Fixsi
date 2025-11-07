@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Meu Histórico{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/avaliacoes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/historico.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="dashboard-main">
+    <div class="dashboard-container">
+
+        <aside class="profile-sidebar">
+            <div class="avatar-wrapper">
+                <img src="{{ perfil.imagem.url|default:'https://placehold.co/150x150/F97316/white?text=User' }}" alt="Avatar do Usuário" class="avatar">
+            </div>
+            <h2>{{ user.get_full_name|default:user.username }}</h2>
+            
+            <a href="#" class="profile-btn btn-view"><i class="fas fa-eye"></i> Ver perfil público</a>
+            <a href="#" class="profile-btn btn-edit"><i class="fas fa-pencil-alt"></i> Editar perfil</a>
+            <a href="{% url 'logout' %}" class="profile-btn btn-logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            <a href="{% url 'dashboard' %}" class="profile-btn btn-inicio"><i class="fas fa-home"></i> Início</a>
+        </aside>
+
+        <section class="dashboard-content">
+            <div class="history-card">
+                
+                <h2 class="page-title">Meus aluguéis e serviços</h2>
+
+                <ul class="history-list">
+                    
+                    <li class="history-item">
+                        <img src="https://images.pexels.com/photos/1625235/pexels-photo-1625235.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Martelete" class="history-image" id="img-1">
+                        <div class="history-details">
+                            <h3 class="history-title">Martelete perfurador 2kg</h3>
+                            <p class="history-date">01/09/2025</p>
+                        </div>
+                        <a href="#" class="btn-details js-open-details" 
+                           data-img-src="https://images.pexels.com/photos/1625235/pexels-photo-1625235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                           data-title="Martelete perfurador 2kg"
+                           data-description="Aluguel de martelete perfurador/rompedor de 2kg. Ideal para pequenas e médias demolições de alvenaria e concreto. Acompanha maleta e 3 brocas. O item foi devolvido em 05/09/2025.">
+                           Detalhes
+                        </a>
+                    </li>
+
+                    <li class="history-item">
+                        <img src="https://images.pexels.com/photos/3310694/pexels-photo-3310694.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Serviço" class="history-image">
+                        <div class="history-details">
+                            <h3 class="history-title">Serviço com Antônio</h3>
+                            <p class="history-date">21/08/2025</p>
+                        </div>
+                        <a href="#" class="btn-details js-open-details"
+                           data-img-src="https://images.pexels.com/photos/3310694/pexels-photo-3310694.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                           data-title="Serviço com Antônio"
+                           data-description="Serviço de marcenaria concluído em 21/08/2025. O Sr. Antônio realizou a instalação de prateleiras na sala e consertou duas portas de armário. Serviço avaliado com 5 estrelas.">
+                           Detalhes
+                        </a>
+                    </li>
+                    
+                    <li class="history-item">
+                        <img src="https://images.pexels.com/photos/1249610/pexels-photo-1249610.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Parafusadeira" class="history-image">
+                        <div class="history-details">
+                            <h3 class="history-title">Parafusadeira a bateria</h3>
+                            <p class="history-date">03/08/2025</p>
+                        </div>
+                        <a href="#" class="btn-details js-open-details"
+                           data-img-src="https://images.pexels.com/photos/1249610/pexels-photo-1249610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                           data-title="Parafusadeira a bateria"
+                           data-description="Aluguel de parafusadeira a bateria 12V. O item foi retirado em 03/08/2025 e devolvido em 04/08/2025. Nenhuma avaria reportada.">
+                           Detalhes
+                        </a>
+                    </li>
+
+                </ul>
+
+                <a href="#" class="btn-view-all">Ver tudo</a>
+
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<div class="modal-backdrop" id="details-modal-backdrop">
+    <div class="modal-window">
+        <button class="modal-close-btn" id="close-details-btn">&times;</button>
+        
+        <img src="" alt="Imagem do Item" id="modal-img" class="modal-img">
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // Seleciona todos os botões que abrem o modal
+        const openButtons = document.querySelectorAll('.js-open-details');
+        
+        // Seleciona o modal e seus elementos
+        const backdrop = document.getElementById('details-modal-backdrop');
+        const closeBtn = document.getElementById('close-details-btn');
+        
+        // Seleciona os elementos de conteúdo DENTRO do modal
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+
+        // Adiciona um 'click listener' para cada botão de "Detalhes"
+        openButtons.forEach(btn => {
+            btn.addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o link de navegar
+
+                // 1. Pega os dados do botão que foi clicado
+                const imgSrc = btn.getAttribute('data-img-src');
+                const title = btn.getAttribute('data-title');
+                const description = btn.getAttribute('data-description');
+
+                // 2. Preenche o modal com os novos dados
+                modalImg.src = imgSrc;
+                modalTitle.textContent = title;
+                modalDescription.textContent = description;
+
+                // 3. Mostra o modal
+                backdrop.classList.add('show');
+            });
+        });
+
+        // Função para fechar o modal
+        function closeModal() {
+            backdrop.classList.remove('show');
+        }
+
+        // Fecha o modal ao clicar no 'X'
+        closeBtn.addEventListener('click', closeModal);
+
+        // Fecha o modal ao clicar fora (no backdrop)
+        backdrop.addEventListener('click', function(event) {
+            if (event.target === backdrop) {
+                closeModal();
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

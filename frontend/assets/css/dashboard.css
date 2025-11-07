@@ -100,3 +100,52 @@ body {
 @media (max-width: 768px) {
     .actions-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* 1. O Fundo Escurecido (Backdrop) mensagemmmmm */
+.chat-modal-backdrop {
+    display: none; /* Começa escondido */
+    position: fixed; /* Fica por cima de tudo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sombra preta translúcida */
+    z-index: 1000; /* Fica na frente da navbar e do resto */
+
+    /* Centraliza a janela do chat */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. Classe que o JavaScript vai adicionar para MOSTRAR o modal */
+.chat-modal-backdrop.show {
+    display: flex;
+}
+
+/* 3. A Janela do Chat (o .chat-container) */
+/* Precisamos disso para o botão 'X' funcionar */
+.chat-modal-backdrop .chat-container {
+    position: relative; 
+    /* Você pode redefinir a altura se quiser */
+    /* height: 600px; (como estava no chat.css) */
+}
+
+/* 4. O Botão 'X' de Fechar */
+.chat-close-btn {
+    position: absolute; /* Posição absoluta DENTRO do chat-container */
+    top: 8px;
+    right: 14px;
+    z-index: 1001; /* Fica na frente do header do chat */
+    
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+
+.chat-close-btn:hover {
+    color: var(--dark-blue);
+}

@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Perfil de {{ user.get_full_name|default:user.username }}{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/avaliacoes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="profile-page-container">
+
+    <!-- BARRA LATERAL (Esquerda) -->
+    <aside class="profile-page-sidebar">
+        
+        <!-- 👇 AVATAR ATUALIZADO 👇 -->
+        <div class="avatar-wrapper">
+            <!-- Agora usa a imagem do perfil, igual ao dashboard -->
+            <img src="{{ perfil.imagem.url|default:'https://placehold.co/150x150/F97316/white?text=User' }}" alt="Avatar do Usuário" class="avatar">
+        </div>
+        
+        <!-- 👇 NOME ATUALIZADO 👇 -->
+        <h2>{{ user.get_full_name|default:user.username }}</h2>
+        
+        <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <div class="location">Brasília - DF</div>
+        
+        <a href="#" class="profile-btn btn-message"><i class="fas fa-envelope"></i> Enviar mensagem</a>
+        <a href="{% url 'editar_perfil_profissional' %}" class="profile-btn btn-edit"><i class="fas fa-pencil-alt"></i> Editar</a>
+        <a href="{% url 'dashboard' %}" class="profile-btn btn-inicio"><i class="fas fa-home"></i> Início</a>
+    </aside>
+
+    <!-- CONTEÚDO (Direita) -->
+    <section class="profile-page-content">
+
+        <!-- Seção: Portifólio -->
+        <div class="profile-section">
+            <h3 class="profile-section-title">Portifólio</h3>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/1114896/pexels-photo-1114896.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cozinha">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sala">
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Pintura">
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção: Sobre -->
+        <div class="profile-section">
+            <h3 class="profile-section-title">Sobre</h3>
+            <p class="about-text">"Sou profissional autônomo com experiência em [área]. Trabalho com dedicação para entregar serviços de qualidade e atender às necessidades de cada cliente. Sempre buscando novos projetos e conexões para crescer junto."</p>
+        </div>
+
+        <!-- Seção: Serviços Prestados -->
+        <div class="profile-section">
+            <h3 class="profile-section-title">Serviços prestados</h3>
+            <div class="service-tags-list">
+                <span class="service-tag">Reforma de Cozinha</span>
+                <span class="service-tag">Reforma de Interiores</span>
+                <span class="service-tag">Pintura Premium</span>
+            </div>
+        </div>
+        
+        <!-- Seção: 2 Avaliações -->
+        <div class="profile-section">
+            <h3 class="profile-section-title">2 Avaliações</h3>
+            <div class="profile-reviews-container">
+                <!-- Coluna 1 -->
+                <div class="review-column">
+                    <article class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-icon"><i class="fas fa-user"></i></div>
+                            <span class="reviewer-name">Mariana Lima</span>
+                            <div class="stars">
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                            </div>
+                            <span class="rating-number">(5)</span>
+                        </div>
+                        <div class="review-body">
+                            <p>"Profissional nota 10! Pontual, muito caprichoso e o serviço ficou impecável. Pode contratar sem medo."</p>
+                        </div>
+                    </article>
+                </div>
+                <!-- Coluna 2 -->
+                <div class="review-column">
+                    <article class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-icon"><i class="fas fa-user"></i></div>
+                            <span class="reviewer-name">Carlos Pereira</span>
+                            <div class="stars">
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                                <i class="fas fa-star filled"></i>
+                            </div>
+                            <span class="rating-number">(5)</span>
+                        </div>
+                        <div class="review-body">
+                            <p>"Trabalho rápido e de altíssima qualidade. O resultado ficou melhor que o esperado. Virou meu contato de confiança para reformas."</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+{% endblock %}

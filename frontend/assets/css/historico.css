@@ -1,0 +1,177 @@
+/* static/css/historico.css */
+
+/* Importa variáveis, sidebar e título */
+@import url('dashboard.css'); 
+@import url('avaliacoes.css'); 
+
+/* Card branco principal */
+.history-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Título (reaproveita .page-title de avaliacoes.css) */
+.history-card .page-title {
+    text-align: center; /* */
+    font-size: 2rem;
+}
+
+/* Lista de itens do histórico */
+.history-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Item individual */
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--light-gray);
+}
+.history-list li:last-child {
+    border-bottom: none;
+}
+
+.history-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.history-details {
+    flex-grow: 1; /* Ocupa o espaço */
+}
+
+.history-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    margin: 0 0 5px 0;
+}
+
+.history-date {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0;
+}
+
+/* Botão "Detalhes" */
+.btn-details {
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.3s;
+    flex-shrink: 0;
+}
+.btn-details:hover {
+    background-color: #e66a15; /* Laranja mais escuro */
+}
+
+/* Botão "Ver tudo" */
+.btn-view-all {
+    display: block; /* Para o margin auto funcionar */
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.btn-view-all:hover {
+    background-color: #e66a15;
+}
+
+/* =========================
+   CSS DO MODAL POP-UP
+=========================
+*/
+
+/* 1. O Fundo Escurecido (Backdrop) */
+.modal-backdrop {
+    display: none; /* Começa escondido */
+    position: fixed; /* Fica por cima de tudo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Sombra preta translúcida */
+    z-index: 1000; 
+
+    /* Centraliza a janela */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. Classe que o JavaScript vai adicionar para MOSTRAR o modal */
+.modal-backdrop.show {
+    display: flex;
+}
+
+/* 3. A Janela do Modal (o card branco) */
+.modal-window {
+    position: relative; /* Para o botão 'X' funcionar */
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px; /* Largura da janela */
+}
+
+/* 4. O Botão 'X' de Fechar */
+.modal-close-btn {
+    position: absolute; 
+    top: 10px;
+    right: 15px;
+    z-index: 1001; 
+    
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+.modal-close-btn:hover {
+    color: var(--dark-blue);
+}
+
+/* 5. Estilos para o conteúdo de "Detalhes" */
+.modal-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-window h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--orange);
+    margin: 0 0 15px 0;
+}
+
+.modal-window p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}

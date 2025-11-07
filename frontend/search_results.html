@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Resultados para "{{ query }}" - Fixsi
+{% endblock %}
+
+{% block styles %}
+    {% endblock %}
+
+{% block content %}
+<main class="service-page-main">
+    
+    <h2 class="search-results-title">Resultados para: <strong>"{{ query }}"</strong></h2>
+
+    <div class="service-list-container">
+        
+        {% for servico in servicos %}
+        <article class="service-card">
+            <div class="service-image">
+                <img src="{{ servico.foto.url|default:'https://placehold.co/100x100/E5E7EB/333?text=Serviço' }}" alt="{{ servico.titulo }}">
+            </div>
+            <div class="service-info">
+                <h3>{{ servico.titulo }}</h3>
+                <p>{{ servico.descricao|truncatewords:20|default:'Descrição do serviço...' }}</p>
+            </div>
+            <a href="#" class="service-details-btn">Detalhes</a>
+        </article>
+        {% endfor %}
+
+        {% if not servicos %}
+            <p style="text-align: center; padding: 40px; color: #777;">Nenhum serviço encontrado para <strong>"{{ query }}"</strong>.</p>
+        {% endif %}
+
+    </div>
+</main>
+{% endblock %}

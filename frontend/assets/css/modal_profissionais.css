@@ -1,0 +1,121 @@
+/* static/css/modal_profissionais.css */
+
+/* 1. O Fundo Escurecido (Backdrop) */
+.modal-backdrop {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+    z-index: 1050; /* Garante que fique acima de tudo */
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* Permite rolar se o conteúdo for muito longo */
+    padding: 20px 0;
+}
+
+/* Classe que o JavaScript adiciona para MOSTRAR o modal */
+.modal-backdrop.show {
+    display: flex;
+}
+
+/* 2. A Janela do Modal */
+.modal-window {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 600px;
+    width: 95%;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    margin: auto; /* Centraliza no eixo vertical quando há scroll */
+}
+
+/* 3. Botão de Fechar */
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-gray);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+.modal-close-btn:hover {
+    color: var(--dark-blue);
+}
+
+/* 4. Título do Modal */
+.modal-window h3 {
+    font-size: 1.5rem;
+    color: var(--dark-blue);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+/* 5. Estilo do Card do Profissional */
+.professional-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.professional-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    background-color: var(--light-gray-bg);
+}
+.prof-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.prof-avatar-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: var(--orange);
+}
+.prof-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.prof-name {
+    font-weight: 600;
+    color: var(--dark-blue);
+    font-size: 1.1rem;
+}
+.prof-rating {
+    color: #FFC107;
+    font-size: 0.9rem;
+}
+.prof-rating i {
+    margin-right: 3px;
+}
+
+/* Botão de Mensagem (Reaproveita estilos de servicos.css) */
+.btn-message-prof {
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+    flex-shrink: 0;
+}
+.btn-message-prof:hover {
+    opacity: 0.9;
+}

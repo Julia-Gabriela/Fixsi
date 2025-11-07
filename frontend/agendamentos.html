@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Meus Agendamentos{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/avaliacoes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/agendamentos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="dashboard-main">
+    <div class="dashboard-container">
+
+        <aside class="profile-sidebar">
+            <div class="avatar-wrapper">
+                <img src="{{ perfil.imagem.url|default:'https://placehold.co/150x150/F97316/white?text=User' }}" alt="Avatar do Usuário" class="avatar">
+            </div>
+            <h2>{{ user.get_full_name|default:user.username }}</h2>
+            
+            <a href="#" class="profile-btn btn-view"><i class="fas fa-eye"></i> Ver perfil público</a>
+            <a href="#" class="profile-btn btn-edit"><i class="fas fa-pencil-alt"></i> Editar perfil</a>
+            <a href="{% url 'logout' %}" class="profile-btn btn-logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            <a href="{% url 'dashboard' %}" class="profile-btn btn-inicio"><i class="fas fa-home"></i> Início</a>
+        </aside>
+
+        <section class="dashboard-content">
+            <div class="appointments-card">
+                
+                <h2 class="page-title">Agendamentos</h2>
+
+                <ul class="appointment-list">
+                    
+                    <li class="appointment-item">
+                        <img src="https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Eletricista" class="appointment-image">
+                        <div class="appointment-details">
+                            <h3 class="appointment-title">Serviço de eletricista com <strong>JOANA</strong></h3>
+                            <p class="appointment-date">Agendado para 05/12/2025</p>
+                        </div>
+                        <span class="appointment-status">Status</span>
+                        <a href="#" class="btn-chat js-open-chat">Chat</a>
+                    </li>
+
+                    <li class="appointment-item">
+                        <img src="https://images.pexels.com/photos/3310694/pexels-photo-3310694.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Marceneiro" class="appointment-image">
+                        <div class="appointment-details">
+                            <h3 class="appointment-title">Serviços gerais com <strong>ANTÔNIO</strong></h3>
+                            <p class="appointment-date">Agendado para 15/10/2025</p>
+                        </div>
+                        <span class="appointment-status">Status</span>
+                        <a href="#" class="btn-chat js-open-chat">Chat</a>
+                    </li>
+                    
+                    <li class="appointment-item">
+                        <img src="https://images.pexels.com/photos/4508745/pexels-photo-4508745.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Jardinagem" class="appointment-image">
+                        <div class="appointment-details">
+                            <h3 class="appointment-title">Serviço de jardinagem com <strong>MÁRIO</strong></h3>
+                            <p class="appointment-date">Agendado para 20/10/2025</p>
+                        </div>
+                        <span class="appointment-status">Status</span>
+                        <a href="#" class="btn-chat js-open-chat">Chat</a>
+                    </li>
+
+                </ul>
+
+                <a href="#" class="btn-view-all">Ver tudo</a>
+
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<div class="chat-modal-backdrop" id="chat-modal-backdrop">
+    <div class="chat-container" id="chat-modal-window">
+        <button class="chat-close-btn" id="close-chat-btn">&times;</button>
+        <header class="chat-header">
+            <div class="user-info">
+                <div class="user-icon"><i class="fas fa-user"></i></div>
+                <span class="user-name">Leandro Marceneiro</span>
+            </div>
+            <div class="status-icon"></div>
+        </header>
+        <main class="chat-messages">
+            <div class="message received">
+                <span>e vem sendo utilizado desde o século XVI...</span>
+            </div>
+            <div class="message sent">
+                <span>da indústria tipográfica e de impressos</span>
+            </div>
+            <div class="message received">
+                <span>É simplesmente uma simulação de texto</span>
+            </div>
+        </main>
+        <footer class="chat-footer">
+            <input type="text" class="message-input" placeholder="Digite sua mensagem...">
+            <div class="input-icons">
+                <i class="fas fa-paperclip"></i>
+                <i class="fas fa-paper-plane"></i>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        const openChatButtons = document.querySelectorAll('.js-open-chat');
+        const closeBtn = document.getElementById('close-chat-btn');
+        const backdrop = document.getElementById('chat-modal-backdrop');
+
+        // Abre o modal para qualquer botão .js-open-chat
+        openChatButtons.forEach(btn => {
+            btn.addEventListener('click', function(event) {
+                event.preventDefault(); 
+                backdrop.classList.add('show');
+            });
+        });
+
+        // Fecha no 'X'
+        closeBtn.addEventListener('click', function() {
+            backdrop.classList.remove('show');
+        });
+
+        // Fecha ao clicar fora
+        backdrop.addEventListener('click', function(event) {
+            if (event.target === backdrop) {
+                backdrop.classList.remove('show');
+            }
+        });
+
+    });
+</script>
+
+{% endblock %}

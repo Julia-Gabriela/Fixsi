@@ -1,0 +1,145 @@
+/* Puxa as variáveis de cor que já usamos (ex: login.css) */
+@import url('login.css'); 
+
+/* * 1. Container Principal do Chat 
+ */
+.chat-container {
+    width: 370px; /* Largura da janela de chat */
+    height: 600px; /* Altura da janela de chat */
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    
+    /* Gradiente de fundo sutil visto na imagem */
+    background: linear-gradient(to bottom, #F4F8FB, var(--white));
+    
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Garante que os cantos arredondados funcionem */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* * 2. Cabeçalho do Chat 
+ */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: var(--white);
+    border-bottom: 1px solid #e9e9e9;
+    flex-shrink: 0; /* Impede que o cabeçalho encolha */
+}
+
+.chat-header .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.chat-header .user-icon {
+    font-size: 1rem;
+    color: var(--dark-blue);
+    background-color: var(--light-gray-bg);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.chat-header .user-name {
+    color: var(--orange); /* Laranja */
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.chat-header .status-icon {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #a0d4f9; /* Círculo azul */
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 1px #a0d4f9; 
+}
+
+/* * 3. Área de Mensagens 
+ */
+.chat-messages {
+    flex-grow: 1; /* Ocupa todo o espaço disponível */
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaço entre as bolhas de msg */
+    overflow-y: auto; /* Permite scroll se as msgs passarem da altura */
+}
+
+.message {
+    padding: 10px 14px;
+    border-radius: 18px;
+    max-width: 80%; /* Mensagens não ocupam a largura toda */
+    font-size: 0.95rem;
+    line-height: 1.4;
+    word-wrap: break-word; /* Quebra palavras longas */
+}
+
+/* Mensagem Recebida (cinza, esquerda) */
+.message.received {
+    background-color: #ECECEC; /* Cinza claro */
+    color: var(--dark-blue);
+    align-self: flex-start; /* Alinha à esquerda */
+    border-bottom-left-radius: 4px; /* Estilo "bolha" */
+}
+
+/* Mensagem Enviada (laranja, direita) */
+.message.sent {
+    background-color: #FAD3B6; /* Laranja claro */
+    color: var(--dark-blue); 
+    align-self: flex-end; /* Alinha à direita */
+    border-bottom-right-radius: 4px; /* Estilo "bolha" */
+}
+
+
+/* * 4. Rodapé (Input) 
+ */
+.chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: var(--white);
+    border-top: 1px solid #e9e9e9;
+    flex-shrink: 0; /* Impede que o rodapé encolha */
+}
+
+.message-input {
+    flex-grow: 1;
+    border: none;
+    background-color: #ECECEC; /* Cinza claro do input */
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    margin-right: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.message-input:focus {
+    outline: none;
+    border: 1px solid var(--orange);
+    background-color: var(--white);
+}
+
+.input-icons {
+    display: flex;
+    gap: 12px;
+    font-size: 1.2rem;
+    color: #999;
+}
+
+.input-icons .fa-paper-plane {
+    color: var(--orange); /* Laranja */
+    cursor: pointer;
+}
+
+.input-icons .fa-paperclip {
+    cursor: pointer;
+}

@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* 👇 ESTA LINHA É A CHAVE DA CORREÇÃO: Importa os estilos do popup 👇 */
+@import url('modal_profissionais.css');
 
 /* ========================
-   Variáveis e Reset (Estilos Globais)
+   Variáveis e Reset (Seu novo CSS)
    ======================== */
 :root {
     --orange: #F97316;
@@ -16,36 +18,39 @@ body {
     font-family: 'Poppins', sans-serif; 
     background-color: var(--white); 
     color: var(--dark-blue);
+    padding-bottom: 100px;
 }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 a { text-decoration: none; }
 
 /* ========================
-   Navbar (Estilos principais)
+   Navbar (Seu novo CSS)
    ======================== */
 .navbar { padding: 15px 0; background-color: var(--white); border-bottom: 1px solid var(--light-gray); }
 .navbar .container { display: flex; justify-content: space-between; align-items: center; }
-.logo { height: 70px; }
+.logo { height: 70px; } 
+
 .nav-menu ul { list-style: none; display: flex; gap: 35px; }
 .nav-menu ul li a { text-decoration: none; color: var(--dark-blue); font-weight: 500; font-size: 1rem; transition: color 0.3s; }
 .nav-menu ul li a:hover { color: var(--orange); }
 .nav-menu ul li.active a { color: var(--orange); font-weight: 600; }
 
 /* ========================
-   Navbar: LADO DIREITO (LOGADO)
+   Navbar: LADO DIREITO (LOGADO) (Seu novo CSS)
    ======================== */
 .nav-action-right { display: flex; align-items: center; gap: 20px; }
 .search-bar { display: flex; align-items: center; background-color: var(--light-gray-bg); border: 1px solid var(--light-gray); border-radius: 20px; padding: 5px 12px; }
-.search-bar input { border: none; background: none; outline: none; font-family: 'Poppins', sans-serif; font-size: 0.9rem; color: var(--text-gray); }
-.search-bar .search-icon { color: var(--text-gray); font-size: 0.9rem; margin-left: 5px; }
+.search-bar input { border: none; background: none; outline: none; font-family: 'Poppins', sans-serif; font-size: 0.9rem; color: var(--dark-blue); }
+.search-bar .search-icon { color: var(--text-gray); font-size: 0.9rem; margin-left: 5px; cursor: pointer; }
+.search-bar button { background: none; border: none; padding: 0; margin: 0; }
+
 .user-icon-link { color: var(--dark-blue); font-size: 1.5rem; transition: color 0.3s; }
 .user-icon-link:hover { color: var(--orange); }
 .user-icon-link.active { color: var(--orange); }
 
 /* ========================
-   Navbar: LADO DIREITO (DESLOGADO)
+   Navbar: LADO DIREITO (DESLOGADO) (Seu novo CSS)
    ======================== */
-
 .btn-signup {
     background-color: var(--dark-blue);
     color: var(--white);
@@ -60,16 +65,10 @@ a { text-decoration: none; }
 }
 
 /* ========================
-   Estilos da Página de Serviços
+   Estilos da Página de Serviços (servicos.html)
    ======================== */
-.banners-container { display: flex; max-width: 1100px; margin: 20px auto 0 auto; padding: 0 20px; gap: 20px; height: 180px; }
-.banner { flex: 1; border-radius: 8px; padding: 25px; color: var(--white); background-size: cover; background-position: center; }
-.banner h3 { font-size: 1.8rem; font-weight: 700; text-transform: uppercase; }
-.banner p { font-size: 0.9rem; max-width: 70%; margin-bottom: 15px; }
-.banner a { color: var(--white); font-weight: 600; font-size: 0.9rem; border-bottom: 2px solid var(--white); align-self: flex-start; }
-.banner-tools { background-color: #5a6a7a; }
-.banner-carpentry { background-color: #007991; }
 .section { padding: 60px 0; }
+.servicos-page { padding-top: 60px; } 
 .header-servicos { text-align: center; max-width: 700px; margin: 0 auto 50px auto; }
 .section-subtitle { font-size: 1rem; font-weight: 600; color: var(--orange); margin-bottom: 5px; text-transform: uppercase; }
 .section-title { font-size: 2.75rem; font-weight: 700; line-height: 1.3; margin-bottom: 20px; color: var(--dark-blue); }
@@ -91,11 +90,138 @@ a { text-decoration: none; }
 .chamada-servicos h2 { font-size: 2rem; margin-bottom: 10px; }
 .chamada-servicos p { font-size: 1.1rem; color: var(--light-gray); }
 .link-orange { color: var(--orange); text-decoration: underline; font-weight: 600; }
+
+/* =================================
+   PÁGINA DE RESULTADOS DA PESQUISA (search_results.html e estáticos)
+   ================================= */
+.service-page-main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.search-results-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--dark-blue); 
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--light-gray); 
+}
+.search-results-title strong {
+    color: var(--orange); 
+}
+
+/* Lista de Cards de Serviço/Ferramenta */
+.service-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.service-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 15px 20px;
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 10px;
+    transition: box-shadow 0.3s;
+}
+.service-card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.service-image {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--light-gray);
+}
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.service-info { flex-grow: 1; }
+.service-info h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    margin-bottom: 5px;
+}
+.service-info p {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    line-height: 1.4;
+}
+.service-details-btn {
+    flex-shrink: 0;
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+.service-details-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* ========================
+   Botão Flutuante (FAB)
+   ======================== */
+.fab-message-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 999;
+}
+.fab-message-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+/* ========================
+   Media Queries
+   ======================== */
 @media (max-width: 768px) {
-    .navbar .container { flex-direction: column; gap: 25px; }
-    .banners-container { flex-direction: column; height: auto; gap: 15px; }
+    .navbar .container { 
+        flex-direction: row; 
+        gap: 15px; 
+    }
+    .nav-menu { display: none; }
+    .search-bar { display: none; } 
+    
     .section-title { font-size: 2.2rem; }
+    
+    /* Carousel */
     .servico-card { width: 240px; }
     .carousel-arrow { display: none; }
     .carousel-wrapper { padding: 0; margin: 0; }
+    
+    /* Search Results List */
+    .service-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .service-image {
+        width: 100%;
+        height: 180px; 
+    }
 }

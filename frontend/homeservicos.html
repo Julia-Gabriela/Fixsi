@@ -3,24 +3,10 @@
 
 {% block title %}Serviços - Fixsi{% endblock %}
 
-{% block styles %}
-    <!-- 
-      Todos os estilos agora vêm de 'servicos.css', 
-      que é carregado pelo 'base.html'.
-    -->
-{% endblock %}
 
 {% block content %}
-    <div class="section servicos-page">
-        <div class="container">
-            <div class="header-servicos">
-                <p class="section-subtitle">Reparos e Manutenção</p>
-                <h1 class="section-title">
-                    Encontre o serviço ideal para seu <span class="highlight">reparo</span> ou <span class="highlight">reforma</span>
-                </h1>
-            </div>
-            
-            <h2 class="section-heading">Categorias de Serviços</h2>
+
+<h2 class="section-heading">Categorias de Serviços</h2>
             <div class="carousel-wrapper">
                 <button class="carousel-arrow prev-arrow" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel-container">
@@ -37,7 +23,6 @@
                         <p>Reparos hidráulicos, vazamentos e desentupimento.</p>
                     </a>
                     
-                    <!-- 👇 CORREÇÃO AQUI (era classs="...") 👇 -->
                     <a href="#" class="servico-card">
                         <div class="icon">🧱</div>
                         <h3>Pedreiro/Reformas</h3>
@@ -115,9 +100,9 @@
 {% endblock %}
 
 {% block scripts %}
-<!-- Script do Carrossel (Mantido) -->
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        // Seu script de carrossel existente
         const carouselWrappers = document.querySelectorAll('.carousel-wrapper');
         carouselWrappers.forEach(wrapper => {
             const prevButton = wrapper.querySelector('.prev-arrow');

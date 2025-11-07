@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Profissionais para Marcenaria{% endblock %}
+
+{% block styles %}
+    <!-- Carrega o CSS do modal (que é importado no servicos.css, mas garantimos aqui) -->
+    <link rel="stylesheet" href="{% static 'css/modal_profissionais.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- 
+    NOTA: Esta página simula o modal, mas é renderizada como uma página completa 
+    para garantir que a funcionalidade via link (href) funcione.
+    Em um ambiente real, você usaria AJAX para carregar apenas o conteúdo 
+    dentro de um modal HTML existente.
+-->
+
+<div class="modal-container-page">
+    <div class="modal-window wide-modal">
+        <a href="{% url 'servicos' %}?q=marceneiro" class="modal-close-btn">&times;</a>
+        
+        <h3>Profissionais disponíveis para o serviço de {{ service_type_display }}</h3>
+        
+        <div class="professional-list">
+            
+            <!-- Profissional 1 -->
+            <div class="professional-card">
+                <div class="prof-info">
+                    <div class="prof-avatar-wrapper">
+                        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Foto de Perfil" class="prof-avatar">
+                    </div>
+                    <div>
+                        <span class="prof-name">Maria Silva</span>
+                        <div class="prof-rating">
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star"></i>
+                            (4.8)
+                        </div>
+                    </div>
+                </div>
+                <a href="{% url 'mensagens' %}" class="btn-message-prof"><i class="fas fa-envelope"></i> Mensagem</a>
+            </div>
+
+            <!-- Profissional 2 -->
+            <div class="professional-card">
+                <div class="prof-info">
+                    <div class="prof-avatar-wrapper">
+                        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Foto de Perfil" class="prof-avatar">
+                    </div>
+                    <div>
+                        <span class="prof-name">João Marcelo</span>
+                        <div class="prof-rating">
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star filled"></i>
+                            (5.0)
+                        </div>
+                    </div>
+                </div>
+                <a href="{% url 'mensagens' %}" class="btn-message-prof"><i class="fas fa-envelope"></i> Mensagem</a>
+            </div>
+
+            <!-- Profissional 3 -->
+            <div class="professional-card">
+                <div class="prof-info">
+                    <div class="prof-avatar-wrapper">
+                        <img src="https://images.pexels.com/photos/1036620/pexels-photo-1036620.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Foto de Perfil" class="prof-avatar">
+                    </div>
+                    <div>
+                        <span class="prof-name">Pedro Rocha</span>
+                        <div class="prof-rating">
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star filled"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            (3.9)
+                        </div>
+                    </div>
+                </div>
+                <a href="{% url 'mensagens' %}" class="btn-message-prof"><i class="fas fa-envelope"></i> Mensagem</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

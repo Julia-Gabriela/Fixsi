@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Resultados para "Marceneiro"{% endblock %}
+
+{% block content %}
+<main class="service-page-main">
+    
+    <!-- Título estático -->
+    <h2 class="search-results-title">Resultados para: <strong>"{{ query|default:'Marceneiro' }}"</strong></h2>
+
+    <!-- Lista de Serviços Estáticos -->
+    <div class="service-list-container">
+        
+        <article class="service-card">
+            <div class="service-image">
+                <img src="https://images.pexels.com/photos/3144580/pexels-photo-3144580.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" 
+                     alt="Móveis Planejados"
+                     onerror="this.onerror=null;this.src='https://placehold.co/100x100/E5E7EB/333?text=Serviço';">
+            </div>
+            <div class="service-info">
+                <h3>Móveis Planejados</h3>
+                <p>Criação e instalação de cozinhas, armários e estantes sob medida.</p>
+            </div>
+            <!-- CORREÇÃO: Link direto para a nova view/página (modal) -->
+            <a href="{% url 'servico_modal' service_type='moveis_planejados' %}" class="service-details-btn">Detalhes</a>
+        </article>
+
+        <article class="service-card">
+            <div class="service-image">
+                <img src="https://images.pexels.com/photos/1420016/pexels-photo-1420016.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" 
+                     alt="Restauração de Móveis"
+                     onerror="this.onerror=null;this.src='https://placehold.co/100x100/E5E7EB/333?text=Serviço';">
+            </div>
+            <div class="service-info">
+                <h3>Restauração de Móveis</h3>
+                <p>Reparo e acabamento para móveis antigos ou danificados.</p>
+            </div>
+            <a href="{% url 'servico_modal' service_type='restauracao' %}" class="service-details-btn">Detalhes</a>
+        </article>
+
+        <article class="service-card">
+            <div class="service-image">
+                <img src="https://images.pexels.com/photos/8005396/pexels-photo-8005396.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" 
+                     alt="Pequenos Reparos"
+                     onerror="this.onerror=null;this.src='https://placehold.co/100x100/E5E7EB/333?text=Serviço';">
+            </div>
+            <div class="service-info">
+                <h3>Pequenos Reparos</h3>
+                <p>Ajuste de portas, troca de dobradiças e consertos rápidos.</p>
+            </div>
+            <a href="{% url 'servico_modal' service_type='pequenos_reparos' %}" class="service-details-btn">Detalhes</a>
+        </article>
+
+        <article class="service-card">
+            <div class="service-image">
+                <img src="https://images.pexels.com/photos/416320/pexels-photo-416320.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" 
+                     alt="Montagem de Móveis"
+                     onerror="this.onerror=null;this.src='https://placehold.co/100x100/E5E7EB/333?text=Serviço';">
+            </div>
+            <div class="service-info">
+                <h3>Montagem de Móveis</h3>
+                <p>Montagem profissional de móveis comprados em loja.</p>
+            </div>
+            <a href="{% url 'servico_modal' service_type='montagem' %}" class="service-details-btn">Detalhes</a>
+        </article>
+
+        <article class="service-card">
+            <div class="service-image">
+                <img src="https://images.pexels.com/photos/159984/pexels-photo-159984.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" 
+                     alt="Móveis Rústicos"
+                     onerror="this.onerror=null;this.src='https://placehold.co/100x100/E5E7EB/333?text=Serviço';">
+            </div>
+            <div class="service-info">
+                <h3>Móveis Rústicos e Artesanais</h3>
+                <p>Criação de peças únicas em madeira de demolição.</p>
+            </div>
+            <a href="{% url 'servico_modal' service_type='rusticos' %}" class="service-details-btn">Detalhes</a>
+        </article>
+
+    </div>
+</main>
+{% endblock %}

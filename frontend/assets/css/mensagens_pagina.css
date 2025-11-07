@@ -1,0 +1,156 @@
+/* static/css/mensagens_pagina.css */
+
+/* Importa estilos do chat (para a caixa de chat) */
+@import url('chat.css'); 
+/* Importa estilos do dashboard (para a sidebar, se usada) */
+@import url('dashboard.css'); 
+
+/* Container principal da página */
+.messages-page-main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* O card branco que segura as duas colunas */
+.messages-container-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e9e9e9;
+    
+    display: flex; /* Cria as duas colunas */
+    height: 75vh; /* Altura da caixa de chat */
+    min-height: 600px;
+    overflow: hidden; /* Garante cantos arredondados */
+}
+
+/* ========================
+   Coluna da Esquerda (Contatos)
+   ======================== */
+.chat-sidebar {
+    flex: 0 0 280px; /* Largura fixa */
+    border-right: 1px solid #e9e9e9;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #e9e9e9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+.sidebar-header .icon {
+    font-size: 1.1rem;
+    color: #777;
+    cursor: pointer;
+}
+
+.contact-list {
+    flex-grow: 1; /* Ocupa espaço */
+    overflow-y: auto; /* Scroll na lista */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s;
+}
+.contact-item:hover {
+    background-color: #f9f9f9;
+}
+.contact-item.active {
+    background-color: #f0f4f8;
+}
+
+.contact-item .user-icon {
+    font-size: 0.9rem;
+    color: var(--dark-blue);
+    background-color: var(--light-gray-bg);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.contact-info .name {
+    font-weight: 600;
+    color: #333;
+}
+.contact-item .icon {
+    margin-left: auto; /* Joga ícone para a direita */
+    color: var(--orange);
+    font-size: 0.8rem;
+}
+
+/* ========================
+   Coluna da Direita (Chat)
+   ======================== */
+.chat-main {
+    flex-grow: 1; /* Ocupa o resto do espaço */
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+ * O .chat-container do chat.css não é mais necessário.
+ * Vamos aplicar os estilos do .chat-header, .chat-messages,
+ * e .chat-footer diretamente na .chat-main
+ */
+
+.chat-main > .chat-header {
+    /* Estilo já vem do chat.css */
+    /* Adiciona link "Ver Perfil" */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-main > .chat-messages {
+    /* Estilo já vem do chat.css */
+    height: 100%; /* Ocupa todo o espaço vertical */
+}
+
+.chat-main > .chat-footer {
+    /* Estilo já vem do chat.css */
+}
+
+.view-profile-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--orange);
+    text-decoration: none;
+}
+.view-profile-link:hover {
+    text-decoration: underline;
+}
+
+/* Remove estilos da página cheia do chat.css */
+.chat-page-container {
+    display: block;
+    min-height: 0;
+    padding: 0;
+    background: none;
+}
+.chat-container {
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}

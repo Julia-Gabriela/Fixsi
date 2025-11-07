@@ -16,11 +16,11 @@
 
     <header class="navbar">
         <div class="container">
-            <div class="logo-container">
-                <a href="{% url 'home' %}">
-                    <img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="logo">
-                </a>
-            </div>
+            
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/logofixsi.png' %}" alt="Logo Fixsi" class="logo">
+            </a>
+            
             <nav class="nav-menu">
                 <ul>
                     <li><a href="{% url 'como_funciona' %}">Como funciona</a></li>
@@ -29,24 +29,25 @@
                 </ul>
             </nav>
 
-            {% if user.is_authenticated %}
-                <div class="nav-action-right">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Pesquisar">
-                        <i class="fas fa-search search-icon"></i>
-                    </div>
+            <div class="nav-action-right">
+                
+                <form class="search-bar" action="{% url 'servicos' %}" method="GET">
+                    <input type="text" name="q" placeholder="Pesquisar" value="{{ query|default:'' }}">
+                    <button type="submit">
+                         <i class="fas fa-search search-icon"></i>
+                    </button>
+                </form>
+
+                {% if user.is_authenticated %}
                     <a href="{% url 'dashboard' %}" class="user-icon-link 
                         {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}">
                         <i class="fas fa-user"></i>
                     </a>
-                </div>
-
-            {% else %}
-                <div class="nav-action">
-                    <a href="/login/" class="btn-signup">Entre ou Cadastre-se</a>
-                </div>
-            {% endif %}
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn-signup">Entre ou Cadastre-se</a>
+                {% endif %}
             </div>
+        </div>
     </header>
 
     <main>
@@ -54,6 +55,12 @@
         {% endblock %}
     </main>
     
+    {% if user.is_authenticated %}
+    <a href="{% url 'mensagens' %}" class="fab-message-btn">
+        <i class="fas fa-envelope"></i>
+    </a>
+    {% endif %}
+
     {% block scripts %}
     {% endblock %}
 

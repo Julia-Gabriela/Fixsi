@@ -1,0 +1,107 @@
+/* static/css/agendamentos.css */
+
+/* Importa variáveis e estilos da sidebar */
+@import url('dashboard.css'); 
+/* Importa o estilo do título da página de avaliações */
+@import url('avaliacoes.css'); 
+
+/* Card branco principal */
+.appointments-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Título (reaproveita .page-title de avaliacoes.css) */
+.appointments-card .page-title {
+    text-align: center; /* */
+    font-size: 2rem;
+}
+
+/* Lista de agendamentos */
+.appointment-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Item individual */
+.appointment-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--light-gray);
+}
+.appointment-list li:last-child {
+    border-bottom: none;
+}
+
+.appointment-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.appointment-details {
+    flex-grow: 1; /* Ocupa o espaço */
+}
+
+.appointment-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    margin: 0 0 5px 0;
+}
+
+.appointment-date {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0;
+}
+
+/* "Status" */
+.appointment-status {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #aaa;
+    margin-right: 15px;
+}
+
+/* Botão "Chat" */
+.btn-chat {
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.3s;
+}
+.btn-chat:hover {
+    background-color: #e66a15; /* Laranja mais escuro */
+}
+
+/* Botão "Ver tudo" */
+.btn-view-all {
+    display: block; /* Para o margin auto funcionar */
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 10px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.btn-view-all:hover {
+    background-color: #e66a15;
+}

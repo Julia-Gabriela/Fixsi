@@ -1,0 +1,130 @@
+/* static/css/avaliacoes.css */
+
+/* Importa variáveis e estilos do dashboard (para a sidebar) */
+@import url('dashboard.css'); 
+
+/* O Título "Histórico de avaliações" */
+.page-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--orange);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* O card branco principal que segura tudo */
+.review-history-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Container para as duas colunas */
+.reviews-container {
+    display: flex;
+    gap: 40px;
+}
+
+/* Estilo individual da coluna (Recebidas / Enviadas) */
+.review-column {
+    flex: 1; /* Cada coluna ocupa metade do espaço */
+    min-width: 0;
+}
+
+.column-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+/* Card para cada avaliação individual */
+.review-card {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--light-gray);
+}
+.review-column .review-card:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Cabeçalho da avaliação (ícone, nome, estrelas) */
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.reviewer-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--light-gray-bg);
+    color: var(--dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: var(--dark-blue);
+    font-size: 1.05rem;
+}
+
+.stars {
+    margin-left: auto; /* Joga as estrelas para a direita */
+    display: flex;
+    gap: 3px;
+    color: #ccc; /* Cor da estrela vazia */
+}
+.stars .filled {
+    color: #FFC107; /* Cor da estrela preenchida */
+}
+.rating-number {
+    font-size: 0.95rem;
+    color: #777;
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+/* Texto da avaliação */
+.review-body p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Estilos específicos da coluna "Enviadas" */
+.service-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.review-breakdown {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0;
+}
+.breakdown-item {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+/* Deixa responsivo em telas menores */
+@media (max-width: 992px) {
+    .reviews-container {
+        flex-direction: column;
+    }
+}

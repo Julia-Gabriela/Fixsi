@@ -1,0 +1,60 @@
+/* Puxa as variáveis de 'login.css' ou 'servicos.css' */
+@import url('servicos.css');
+
+/* Estes estilos adaptam o card de login (que reutilizamos)
+   para o novo formulário de serviço.
+*/
+
+.form-card {
+    max-width: 600px; /* Card mais largo que o de login */
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.form-card .login-form {
+    text-align: left;
+}
+
+.form-card label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--dark-blue);
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+
+.form-card input,
+.form-card textarea {
+    background-color: var(--light-gray-bg) !important;
+    border: 1px solid var(--light-gray) !important;
+    padding: 12px 15px !important;
+    font-size: 1rem !important;
+    color: var(--dark-blue);
+}
+
+.form-card textarea {
+    resize: vertical;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo para o input de arquivo */
+.input-file {
+    font-size: 0.95rem !important;
+    padding: 10px !important;
+}
+
+.input-file::file-selector-button {
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.form-card .btn-login {
+    margin-top: 30px;
+}

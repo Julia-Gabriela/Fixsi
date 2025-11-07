@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Editar Perfil Profissional{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/avaliacoes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="profile-page-container">
+
+    <aside class="profile-page-sidebar">
+        
+        <div class="avatar-wrapper">
+            <!-- Seu SQL usa 'imagem' no 'perfil' -->
+            <img src="{{ perfil.imagem|default:'https://placehold.co/150x150/F97316/white?text=User' }}" alt="Avatar do Usuário" class="avatar">
+        </div>
+        
+        <h2>{{ user.get_full_name|default:user.username }}</h2>
+        
+        <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <div class="location">Brasília - DF</div>
+        
+        <a href="{% url 'perfil_profissional' %}" class="profile-btn btn-cancel"><i class="fas fa-times"></i> Cancelar Edição</a>
+        <a href="{% url 'dashboard' %}" class="profile-btn btn-inicio"><i class="fas fa-home"></i> Início (Dashboard)</a>
+    </aside>
+
+    <form class="profile-page-content edit-mode" method="POST" action="{% url 'editar_perfil_profissional' %}">
+        {% csrf_token %}
+
+        <div class="profile-section">
+            <h3 class="profile-section-title">Portifólio</h3>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/1114896/pexels-photo-1114896.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cozinha">
+                    <button type="button" class="btn-delete-icon"><i class="fas fa-trash"></i></button>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sala">
+                    <button type="button" class="btn-delete-icon"><i class="fas fa-trash"></i></button>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Pintura">
+                    <button type="button" class="btn-delete-icon"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+            <button type="button" class="btn-add-tag" style="margin-top: 15px;"><i class="fas fa-plus"></i> Adicionar Foto</button>
+        </div>
+
+        <div class="profile-section">
+            <h3 class="profile-section-title">Sobre</h3>
+            <!-- 
+              CORREÇÃO: A 'bio' está no 'Profissional', que é linkado ao 'Perfil'.
+              Acessamos via 'perfil.profissional.bio'.
+            -->
+            <textarea name="sobre" class="about-text-edit" placeholder="Escreva uma breve descrição sobre você e seus serviços...">{{ perfil.profissional.bio|default:'' }}</textarea>
+        </div>
+
+        <div class="profile-section">
+            <h3 class="profile-section-title">Serviços prestados</h3>
+            <div class="service-tags-list">
+                <span class="service-tag">Reforma de Cozinha <button type="button" class="btn-delete-icon"><i class="fas fa-times"></i></button></span>
+                <span class="service-tag">Reforma de Interiores <button type="button" class="btn-delete-icon"><i class="fas fa-times"></i></button></span>
+                <span class="service-tag">Pintura Premium <button type="button" class="btn-delete-icon"><i class="fas fa-times"></i></button></span>
+                
+                <button type="button" class="btn-add-tag"><i class="fas fa-plus"></i> Adicionar Serviço</button>
+            </div>
+        </div>
+        
+        <div class="profile-section">
+            <h3 class="profile-section-title">Avaliações (não editável)</h3>
+            <p style="color: #666; font-style: italic;">As avaliações são gerenciadas automaticamente.</p>
+        </div>
+
+        <div class="form-actions" style="display: flex; gap: 15px; margin-top: 30px; border-top: 1px solid var(--light-gray); padding-top: 25px;">
+            <button type="submit" class="profile-btn btn-confirm"><i class="fas fa-check"></i> Confirmar Alterações</button>
+            <a href="{% url 'perfil_profissional' %}" class="profile-btn btn-cancel-inline"><i class="fas fa-times"></i> Cancelar</a>
+        </div>
+
+    </form>
+
+</main>
+{% endblock %}

@@ -3,19 +3,21 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Perfil, Cliente, Profissional
+# IMPORTANTE: Mantendo a correção de bug (importando do 'app')
+from app.models import Perfil, Cliente, Profissional
 
 
 # ---------- LOGIN ----------
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST.get('username')  # <- volta a usar 'username'
+        username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
             login(request, user)
             messages.success(request, f"Bem-vindo(a), {user.first_name or user.username}!")
+            # 👇 RESTAURADO: Redireciona para 'dashboard'
             return redirect('dashboard')
         else:
             messages.error(request, 'Usuário ou senha incorretos.')
@@ -30,9 +32,10 @@ def logout_view(request):
     return redirect('login')
 
 
-# ---------- ÁREA LOGADA ----------
+# ---------- ÁREA LOGADA (pós-cadastro) ----------
 @login_required(login_url='login')
 def area_logada_view(request):
+    # Esta é a view simples que você tinha para a 'area_logada'
     return render(request, 'area_logada.html')
 
 
@@ -53,6 +56,11 @@ def cadastro1(request):
         if dados['senha'] != dados['confirmar_senha']:
             messages.error(request, "As senhas não coincidem.")
             return render(request, 'cadastro1.html')
+        
+        # Validação de email (Mantendo a correção de bug)
+        if User.objects.filter(username=dados['email']).exists():
+            messages.error(request, "E-mail já cadastrado.")
+            return redirect('cadastro1') # Usando redirect para limpar o form
 
         request.session['dados_cadastro'] = dados
         return redirect('cadastro2')
@@ -73,46 +81,55 @@ def cadastro2(request):
         if not tipo:
             messages.error(request, "Selecione se você é cliente ou profissional.")
             return render(request, 'cadastro2.html')
+        
+        try:
+            user = User.objects.create_user(
+                username=dados['email'],
+                email=dados['email'],
+                password=dados['senha'],
+                first_name=dados['nome']
+            )
 
-        if User.objects.filter(username=dados['email']).exists():
-            messages.error(request, "E-mail já cadastrado.")
+            perfil = Perfil.objects.create(
+                user=user,
+                cpf=dados['cpf'],
+                telefone=dados['telefone'],
+                data_nascimento=dados['data_nascimento'],
+                tipo=tipo
+            )
+
+            if tipo == 'cliente':
+                Cliente.objects.create(
+                    perfil=perfil,
+                    endereco=request.POST.get('endereco'),
+                    cidade=request.POST.get('cidade'),
+                    estado=request.POST.get('estado')
+                )
+            else: # tipo == 'profissional'
+                Profissional.objects.create(
+                    perfil=perfil,
+                    area_atuacao=request.POST.get('area_atuacao'),
+                    experiencia=request.POST.get('experiencia'),
+                    bio=request.POST.get('bio'),
+                    # Profissional também tem endereço no seu model
+                    endereco=request.POST.get('endereco'),
+                    cidade=request.POST.get('cidade'),
+                    estado=request.POST.get('estado')
+                )
+
+            login(request, user)
+            messages.success(request, f"Bem-vindo(a), {user.first_name}! Seu cadastro foi concluído com sucesso.")
+            
+            # 👇 RESTAURADO: Redireciona para 'area_logada'
+            return redirect('area_logada')
+        
+        except Exception as e:
+            # Captura qualquer erro (como CPF duplicado) e informa o usuário
+            messages.error(request, f"Ocorreu um erro ao criar a conta. Tente novamente.")
+            # Limpa os dados da sessão para segurança
+            if 'dados_cadastro' in request.session:
+                del request.session['dados_cadastro']
             return redirect('cadastro1')
 
-        user = User.objects.create_user(
-            username=dados['email'],
-            email=dados['email'],
-            password=dados['senha'],
-            first_name=dados['nome']
-        )
-
-        perfil = Perfil.objects.create(
-            user=user,
-            cpf=dados['cpf'],
-            telefone=dados['telefone'],
-            data_nascimento=dados['data_nascimento'],
-            tipo=tipo
-        )
-
-        if tipo == 'cliente':
-            Cliente.objects.create(
-                perfil=perfil,
-                endereco=request.POST.get('endereco'),
-                cidade=request.POST.get('cidade'),
-                estado=request.POST.get('estado')
-            )
-        else:
-            Profissional.objects.create(
-                perfil=perfil,
-                area_atuacao=request.POST.get('area_atuacao'),
-                experiencia=request.POST.get('experiencia'),
-                bio=request.POST.get('bio'),
-                endereco=request.POST.get('endereco'),
-                cidade=request.POST.get('cidade'),
-                estado=request.POST.get('estado')
-            )
-
-        login(request, user)
-        messages.success(request, f"Bem-vindo(a), {user.first_name}! Seu cadastro foi concluído com sucesso.")
-        return redirect('area_logada')
 
     return render(request, 'cadastro2.html')

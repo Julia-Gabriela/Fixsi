@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Mensagens - Leandro Marceneiro{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="chat-page-container">
+
+    <div class="chat-container">
+        
+        <header class="chat-header">
+            <div class="user-info">
+                <div class="user-icon"><i class="fas fa-user"></i></div>
+                <span class="user-name">Leandro Marceneiro</span>
+            </div>
+            <div class="status-icon"></div>
+        </header>
+
+        <main class="chat-messages">
+            
+            <div class="message received">
+                <span>e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou</span>
+            </div>
+            
+            <div class="message sent">
+                <span>da indústria tipográfica e de impressos</span>
+            </div>
+            
+            <div class="message received">
+                <span>É simplesmente uma simulação de texto</span>
+            </div>
+            
+        </main>
+
+        <footer class="chat-footer">
+            <input type="text" class="message-input" placeholder="Digite sua mensagem...">
+            <div class="input-icons">
+                <i class="fas fa-paperclip"></i>
+                <i class="fas fa-paper-plane"></i>
+            </div>
+        </footer>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Minhas Mensagens{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mensagens_pagina.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="messages-page-main">
+    <div class="messages-container-card">
+
+        <!-- COLUNA DA ESQUERDA (SIDEBAR DE CONTATOS) -->
+        <aside class="chat-sidebar">
+            <!-- ... (conteúdo da lista de contactos) ... -->
+            <div class="contact-item active">
+                <div class="user-icon"><i class="fas fa-user"></i></div>
+                <div class="contact-info">
+                    <div class="name">Leandro Marceneiro</div>
+                </div>
+                <i class="fas fa-bell icon"></i>
+            </div>
+        </aside>
+
+        <!-- COLUNA DA DIREITA (JANELA DE CHAT) -->
+        <main class="chat-main">
+            <header class="chat-header">
+                <div class="user-info">
+                    <div class="user-icon"><i class="fas fa-user"></i></div>
+                    <span class="user-name">Leandro Marceneiro</span>
+                </div>
+                
+                <!-- 👇 LINK ATUALIZADO 👇 -->
+                <!-- 
+                  Nota: 'user.id' refere-se ao utilizador logado.
+                  Quando o chat for dinâmico, troque 'user.id' 
+                  pelo ID do contacto (ex: 'leandro.id') 
+                -->
+                <a href="{% url 'perfil_cliente' user_id=user.id %}" class="view-profile-link">Ver Perfil</a>
+            </header>
+
+            <!-- ... (resto do chat) ... -->
+            <main class="chat-messages">
+                <div class="message received">
+                    <span>e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou</span>
+                </div>
+                <div class="message sent">
+                    <span>da indústria tipográfica e de impressos</span>
+                </div>
+                <div class="message received">
+                    <span>É simplesmente uma simulação de texto</span>
+                </div>
+            </main>
+            <footer class="chat-footer">
+                <input type="text" class="message-input" placeholder="Digite sua mensagem...">
+                <div class="input-icons">
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+            </footer>
+        </main>
+
+    </div>
+</main>
+{% endblock %}
