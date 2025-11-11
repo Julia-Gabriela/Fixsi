@@ -1,136 +1,191 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Serviços - Fixsi{% endblock %}
+{% block title %}Fixsi - Encontre Profissionais{% endblock %}
 
 {% block styles %}
-    <!-- 
-      Todos os estilos agora vêm de 'servicos.css', 
-      que é carregado pelo 'base.html'.
-    -->
+    <link rel="stylesheet" href="{% static 'css/homeservicos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modal_profissionais.css' %}">
 {% endblock %}
 
 {% block content %}
-    <div class="section servicos-page">
+    <!-- Banner Duplo -->
+    <section class="dual-banner">
         <div class="container">
-            <div class="header-servicos">
-                <p class="section-subtitle">Reparos e Manutenção</p>
-                <h1 class="section-title">
-                    Encontre o serviço ideal para seu <span class="highlight">reparo</span> ou <span class="highlight">reforma</span>
-                </h1>
-            </div>
-            
-            <h2 class="section-heading">Categorias de Serviços</h2>
-            <div class="carousel-wrapper">
-                <button class="carousel-arrow prev-arrow" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-                <div class="carousel-container">
-                    
-                    <a href="#" class="servico-card">
-                        <div class="icon">⚡</div>
-                        <h3>Eletricista</h3>
-                        <p>Instalação, reparo e manutenção elétrica.</p>
-                    </a>
-                    
-                    <a href="#" class="servico-card">
-                        <div class="icon">💧</div>
-                        <h3>Encanador</h3>
-                        <p>Reparos hidráulicos, vazamentos e desentupimento.</p>
-                    </a>
-                    
-                    <!-- 👇 CORREÇÃO AQUI (era classs="...") 👇 -->
-                    <a href="#" class="servico-card">
-                        <div class="icon">🧱</div>
-                        <h3>Pedreiro/Reformas</h3>
-                        <p>Pequenas obras, alvenaria e acabamentos.</p>
-                    </a>
-                    
-                    <a href="#" class="servico-card">
-                        <div class="icon">🎨</div>
-                        <h3>Pintor</h3>
-                        <p>Pintura de paredes, teto e tratamento de superfícies.</p>
-                    </a>
-
-                    <a href="#" class="servico-card">
-                        <div class="icon">🔧</div>
-                        <h3>Montador de Móveis</h3>
-                        <p>Montagem e desmontagem de móveis novos ou usados.</p>
-                    </a>
-                    
-                    <a href="#" class="servico-card">
-                        <div class="icon">🔨</div>
-                        <h3>Marido de Aluguel</h3>
-                        <p>Serviços gerais, como fixação de quadros e prateleiras.</p>
-                    </a>
-
+            <div class="banner-wrapper">
+                <!-- Banner Tools -->
+                <div class="banner-card banner-tools">
+                    <div class="banner-content">
+                        <h2 class="banner-title">FERRAMENTAS</h2>
+                        <p class="banner-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                        <button class="banner-btn">SAIBA MAIS</button>
+                    </div>
                 </div>
-                <button class="carousel-arrow next-arrow" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
-            </div>
-            
-            <h2 class="section-heading">Categorias de Ferramentas</h2>
-            <div class="carousel-wrapper">
-                <button class="carousel-arrow prev-arrow" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-                <div class="carousel-container">
-                    
-                    <a href="#" class="servico-card">
-                        <div class="icon">🚧</div>
-                        <h3>Betoneiras</h3>
-                        <p>Mistura de concreto e argamassa para obras.</p>
-                    </a>
-                    
-                    <a href="#" class="servico-card">
-                        <div class="icon">🔩</div>
-                        <h3>Serras e Cortes</h3>
-                        <p>Serras circulares, mármore e mais.</p>
-                    </a>
-                    
-                    <a href="#" class="servico-card">
-                        <div class="icon">💥</div>
-                        <h3>Marteletes</h3>
-                        <p>Perfuração e demolição de concreto.</p>
-                    </a>
-                    
-                    <a href="#" class="servico-card">
-                        <div class="icon">🪜</div>
-                        <h3>Escadas e Andaimes</h3>
-                        <p>Trabalho em altura com segurança.</p>
-                    </a>
 
-                    <a href="#" class="servico-card">
-                        <div class="icon">⚡</div>
-                        <h3>Geradores</h3>
-                        <p>Energia temporária para sua obra ou evento.</p>
-                    </a>
-
+                <!-- Banner Carpentry -->
+                <div class="banner-card banner-carpentry">
+                    <div class="banner-content">
+                        <h2 class="banner-title">SERVIÇOS</h2>
+                        <p class="banner-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</p>
+                        <button class="banner-btn">SAIBA MAIS</button>
+                    </div>
                 </div>
-                <button class="carousel-arrow next-arrow" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
-            </div> 
-            
-            <div class="chamada-servicos">
-                <h2>É profissional de reparos?</h2>
-                <p>Cadastre-se e comece a receber pedidos de orçamento na sua região. <a href="{% url 'login' %}" class="link-orange">Cadastre-se agora</a>!</p>
             </div>
-            
         </div>
-    </div>
+    </section>
+
+    <!-- Serviços em Destaque -->
+    <section class="featured-services">
+        <div class="container">
+            <h2 class="section-title">Serviços em destaque</h2>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel('services', -1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="carousel-track" id="services-carousel">
+                    <!-- Card 1 -->
+                    <div class="service-card" data-id="1" data-nome="Leandro Marceneiro" data-avaliacao="5.0" data-total-avaliacoes="10">
+                        <div class="service-image">
+                            <img src="{% static 'img/marceneiro.png' %}" alt="Leandro">
+                        </div>
+                        <h3 class="service-name">Leandro Marceneiro</h3>
+                        <button class="btn-contact">Contratar</button>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="service-card">
+                        <div class="service-image circle-image">
+                            <img src="{% static 'img/pedreiro.png' %}" alt="Chico Pedreiro">
+                        </div>
+                        <h3 class="service-name">Chico Pedreiro</h3>
+                        <button class="btn-contact">Contratar</button>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="{% static 'img/pintor.png' %}" alt="Jailson Pintor">
+                        </div>
+                        <h3 class="service-name">Jailson Pintor</h3>
+                        <button class="btn-contact">Contratar</button>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="service-card">
+                        <div class="service-image circle-image">
+                            <img src="{% static 'img/eletricista.png' %}" alt="Marcio Eletricista">
+                        </div>
+                        <h3 class="service-name">Marcio Eletricista</h3>
+                        <button class="btn-contact">Contratar</button>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="service-card">
+                        <div class="service-image circle-image">
+                            <img src="{% static 'img/encanador.png' %}" alt="José Encanador">
+                        </div>
+                        <h3 class="service-name">José Encanador</h3>
+                        <button class="btn-contact">Contratar</button>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="{% static 'img/marceneiro.png' %}" alt="Jonas">
+                        </div>
+                        <h3 class="service-name">Jonas Marceneiro</h3>
+                        <button class="btn-contact">Contratar</button>
+                    </div>
+
+                    <!-- Adicione mais cards conforme necessário -->
+                </div>
+                
+                <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel('services', 1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ferramentas em Destaque -->
+    <section class="featured-tools">
+        <div class="container">
+            <h2 class="section-title">Ferramentas em destaque</h2>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel('tools', -1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="carousel-track" id="tools-carousel">
+                    <!-- Tool Card 1 -->
+                    <div class="tool-card">
+                        <div class="tool-image">
+                            <img src="{% static 'img/betoneira.png' %}" alt="Betoneira">
+                        </div>
+                        <h3 class="service-name">Betoneira</h3>
+                        <button class="btn-contact">Alugar</button>
+                    </div>
+
+                    <!-- Tool Card 2 -->
+                    <div class="tool-card">
+                        <div class="tool-image">
+                            <img src="{% static 'img/serra.png' %}" alt="Serra Circular">
+                        </div>
+                        <h3 class="service-name">Serra</h3>
+                        <button class="btn-contact">Alugar</button>
+                    </div>
+
+                    <!-- Tool Card 3 -->
+                    <div class="tool-card">
+                        <div class="tool-image">
+                            <img src="{% static 'img/furadeira.png' %}" alt="Furadeira">
+                        </div>
+                        <h3 class="service-name">Furadeira</h3>
+                        <button class="btn-contact">Alugar</button>
+                    </div>
+
+                    <!-- Tool Card 4 -->
+                    <div class="tool-card">
+                        <div class="tool-image">
+                            <img src="{% static 'img/andaime.png' %}" alt="Andaime">
+                        </div>
+                        <h3 class="service-name">Andaime</h3>
+                        <button class="btn-contact">Alugar</button>
+                    </div>
+
+                    <!-- Tool Card 5 -->
+                    <div class="tool-card">
+                        <div class="tool-image">
+                            <img src="{% static 'img/escada.png' %}" alt="Escada">
+                        </div>
+                        <h3 class="service-name">Escada</h3>
+                        <button class="btn-contact">Alugar</button>
+                    </div>
+
+                    <!-- Tool Card 6 -->
+                    <div class="tool-card">
+                        <div class="tool-image">
+                            <img src="{% static 'img/parafusadeira.png' %}" alt="Parafusadeira">
+                        </div>
+                        <h3 class="service-name">´Parafusadeira</h3>
+                        <button class="btn-contact">Alugar</button>
+                    </div>
+
+                    <!-- Adicione mais cards conforme necessário -->
+                </div>
+                
+                <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel('tools', 1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
 {% endblock %}
 
 {% block scripts %}
-<!-- Script do Carrossel (Mantido) -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const carouselWrappers = document.querySelectorAll('.carousel-wrapper');
-        carouselWrappers.forEach(wrapper => {
-            const prevButton = wrapper.querySelector('.prev-arrow');
-            const nextButton = wrapper.querySelector('.next-arrow');
-            const carouselContainer = wrapper.querySelector('.carousel-container');
-            const scrollAmount = 300; 
-            nextButton.addEventListener('click', () => {
-                carouselContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            });
-            prevButton.addEventListener('click', () => {
-                carouselContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            });
-        });
-    });
-</script>
+    <script src="{% static 'js/homeservicos.js' %}"></script>
 {% endblock %}

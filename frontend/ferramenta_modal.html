@@ -71,7 +71,7 @@
             {% csrf_token %}
             <label for="nome_cliente">Nome:</label>
             <input type="text" id="nome_cliente" name="nome_cliente"
-                   value="{{ perfil.user.get_full_name|default:perfil.user.username|default:'' }}"
+                   value="{% if user.is_authenticated %}{{ user.get_full_name|default:user.username }}{% endif %}"
                    placeholder="Seu nome">
 
             <label for="data_retirada">Data de Retirada:</label>
